@@ -61,8 +61,14 @@ const CarouselSlide = styled.div<{ background: string; isBanner?: boolean }>`
   }
 
   @media (max-width: 768px) {
-    height: 350px;
-    padding: 2rem;
+    height: 250px;
+    padding: 1rem;
+
+    ${props => props.isBanner && `
+      background-size: contain;
+      background-position: center;
+      background-color: #000;
+    `}
   }
 `;
 
