@@ -1,5 +1,13 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useParams, useNavigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useParams,
+  useNavigate,
+  useLocation,
+} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { GlobalStyle } from './styles/global-styles';
 import './i18n';
@@ -23,31 +31,31 @@ import LuntsTermsConditions from './pages/lunts/terms-conditions';
 // Add FontAwesome icons to library
 library.add(fas, fab);
 
-// Language wrapper component
+// ✅ Language wrapper component
 const LanguageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { lang } = useParams<{ lang: string }>();
   const { i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const supportedLanguages = ['en', 'es', 'fr'];
-    const base = import.meta.env.BASE_URL || '/';
 
     if (lang && supportedLanguages.includes(lang)) {
       if (i18n.language !== lang) {
         i18n.changeLanguage(lang);
       }
     } else {
-      // Redirect to default language if invalid or missing
-      const newPath = base + 'en' + window.location.pathname.replace(/^\/[a-z]{2}/, '');
+      // ✅ Redirect to default language if invalid or missing
+      const newPath = location.pathname.replace(/^\/[^/]+/, '/en');
       navigate(newPath, { replace: true });
     }
-  }, [lang, i18n, navigate]);
+  }, [lang, i18n, navigate, location]);
 
   return <>{children}</>;
 };
 
-// Main App component
+// ✅ Main App component
 const App: React.FC = () => {
   return (
     <>
@@ -56,7 +64,7 @@ const App: React.FC = () => {
         <Routes>
           {/* Redirect root to default language */}
           <Route path="/" element={<Navigate to="/en" replace />} />
-          
+
           {/* Language-based routes */}
           <Route
             path="/:lang/*"
@@ -82,7 +90,7 @@ const App: React.FC = () => {
               </LanguageWrapper>
             }
           />
-          
+
           {/* Catch all route */}
           <Route path="*" element={<Navigate to="/en" replace />} />
         </Routes>

@@ -170,7 +170,7 @@ const Home: React.FC = () => {
       description: '',
       buttonText: '',
       buttonAction: () => window.location.href = `/${lang}/products`,
-      background: `url('/src/assets/bitsquid-banner.png')`,
+      background: `url(${import.meta.env.BASE_URL}assets/bitsquid-banner.png)`,
       isBanner: true,
     },
     {

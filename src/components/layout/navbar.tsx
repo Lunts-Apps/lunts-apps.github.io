@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -322,6 +322,7 @@ const MobileMenuButton = styled.button<{ $isLunts?: boolean }>`
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const location = useLocation();
   const { lang } = useParams<{ lang: string }>();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -343,7 +344,7 @@ const Navbar: React.FC = () => {
 
   const changeLanguage = (newLang: string) => {
     const currentPath = location.pathname.replace(/^\/[a-z]{2}/, '');
-    window.location.href = `/${newLang}${currentPath}`;
+    navigate(`/${newLang}${currentPath}`, { replace: true });
   };
 
   const getLanguageName = (langCode: string) => {
