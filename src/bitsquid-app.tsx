@@ -31,14 +31,16 @@ const LanguageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
   useEffect(() => {
     const supportedLanguages = ['en', 'es', 'fr'];
-    
+    const base = import.meta.env.BASE_URL || '/';
+
     if (lang && supportedLanguages.includes(lang)) {
       if (i18n.language !== lang) {
         i18n.changeLanguage(lang);
       }
     } else {
       // Redirect to default language if invalid or missing
-      navigate('/en' + window.location.pathname.replace(/^\/[a-z]{2}/, ''), { replace: true });
+      const newPath = base + 'en' + window.location.pathname.replace(/^\/[a-z]{2}/, '');
+      navigate(newPath, { replace: true });
     }
   }, [lang, i18n, navigate]);
 
@@ -56,27 +58,30 @@ const App: React.FC = () => {
           <Route path="/" element={<Navigate to="/en" replace />} />
           
           {/* Language-based routes */}
-          <Route path="/:lang/*" element={
-            <LanguageWrapper>
-              <div className="App">
-                <Navbar />
-                <main>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/products" element={<Products />} />
-                    <Route path="/products/lunts" element={<LuntsPage />} />
-                    <Route path="/products/lunts/privacy-policy" element={<LuntsPrivacyPolicy />} />
-                    <Route path="/products/lunts/terms-and-conditions" element={<LuntsTermsConditions />} />
-                    <Route path="/jobs" element={<Jobs />} />
-                    <Route path="/contact" element={<Contact />} />
-                    {/* Catch all route for 404 */}
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                  </Routes>
-                </main>
-                <Footer />
-              </div>
-            </LanguageWrapper>
-          } />
+          <Route
+            path="/:lang/*"
+            element={
+              <LanguageWrapper>
+                <div className="App">
+                  <Navbar />
+                  <main>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/products" element={<Products />} />
+                      <Route path="/products/lunts" element={<LuntsPage />} />
+                      <Route path="/products/lunts/privacy-policy" element={<LuntsPrivacyPolicy />} />
+                      <Route path="/products/lunts/terms-and-conditions" element={<LuntsTermsConditions />} />
+                      <Route path="/jobs" element={<Jobs />} />
+                      <Route path="/contact" element={<Contact />} />
+                      {/* Catch all route for 404 */}
+                      <Route path="*" element={<Navigate to="/" replace />} />
+                    </Routes>
+                  </main>
+                  <Footer />
+                </div>
+              </LanguageWrapper>
+            }
+          />
           
           {/* Catch all route */}
           <Route path="*" element={<Navigate to="/en" replace />} />
