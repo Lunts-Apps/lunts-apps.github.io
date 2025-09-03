@@ -1175,8 +1175,14 @@ If it declares any Font Awesome CSS pseudo-elements, they will not be rendered a
   }
 
   @media (max-width: 768px) {
-    height: 350px;
-    padding: 2rem;
+    height: 250px;
+    padding: 1rem;
+
+    ${l=>l.isBanner&&`
+      background-size: contain;
+      background-position: center;
+      background-color: #000;
+    `}
   }
 `,zl1=D.div`
   text-align: center;
