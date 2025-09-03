@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test - Bitsquid</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: white;
+        }
+        
+        .mobile-frame {
+            width: 375px;
+            height: 667px;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+        }
+        
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform: scale(0.42);
+            transform-origin: 0 0;
+            width: 238%;
+            height: 238%;
+        }
+        
+        .instructions {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background: #16213e;
+            border-radius: 10px;
+        }
+        
+        .instructions h2 {
+            color: #a855f7;
+            margin-bottom: 15px;
+        }
+        
+        .instructions p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .status {
+            background: #059669;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="status">
+        ✅ Menú hamburguesa móvil implementado correctamente - Se desliza desde el lado izquierdo
+    </div>
+    
+    <div class="instructions">
+        <h2>Menú Hamburguesa Móvil - Bitsquid</h2>
+        <p><strong>Problema resuelto:</strong> El menú ahora funciona como un menú hamburguesa estándar que se desliza desde el lado izquierdo.</p>
+        <p><strong>Mejoras implementadas:</strong></p>
+        <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+            <li>✅ <strong>Menú hamburguesa lateral:</strong> Se desliza desde el lado izquierdo (280px de ancho)</li>
+            <li>✅ <strong>Botón hamburguesa:</strong> Icono de barras que cambia a X cuando está abierto</li>
+            <li>✅ <strong>Overlay oscuro:</strong> Fondo semitransparente para cerrar el menú</li>
+            <li>✅ <strong>Navegación completa:</strong> Home, Products, Jobs, Contact</li>
+            <li>✅ <strong>Dropdown de productos:</strong> Funciona dentro del menú lateral</li>
+            <li>✅ <strong>Selector de idioma:</strong> Completamente funcional en móvil</li>
+            <li>✅ <strong>Auto-cierre:</strong> Se cierra al hacer clic en cualquier enlace o en el overlay</li>
+            <li>✅ <strong>Animaciones suaves:</strong> Transiciones de 0.3s para una experiencia fluida</li>
+        </ul>
+        <p><strong>Instrucciones:</strong> El sitio está corriendo en <code>http://localhost:5176/</code></p>
+        <p><strong>Para probar:</strong> Abre el sitio en tu dispositivo móvil o usa las herramientas de desarrollador del navegador (F12 → Toggle device toolbar → Selecciona un dispositivo móvil).</p>
+    </div>
+    
+    <div class="mobile-frame">
+        <div class="iframe-container">
+            <iframe src="http://localhost:5176/" title="Bitsquid Mobile View"></iframe>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <h2>Cómo Funciona el Menú Hamburguesa</h2>
+        <div style="text-align: left; max-width: 700px; margin: 0 auto;">
+            <p><strong>🍔 Botón Hamburguesa:</strong></p>
+            <ul>
+                <li>Aparece en la esquina superior derecha en pantallas ≤768px</li>
+                <li>Muestra icono de barras (☰) cuando está cerrado</li>
+                <li>Cambia a icono de X (✕) cuando está abierto</li>
+            </ul>
+            
+            <p><strong>📱 Menú Lateral:</strong></p>
+            <ul>
+                <li>Se desliza desde el lado izquierdo de la pantalla</li>
+                <li>Ancho de 280px para una navegación cómoda</li>
+                <li>Ocupa toda la altura de la pantalla</li>
+                <li>Fondo con el mismo color del tema (Bitsquid/Lunts)</li>
+            </ul>
+            
+            <p><strong>🎯 Interacciones:</strong></p>
+            <ul>
+                <li>Toca el botón hamburguesa para abrir/cerrar</li>
+                <li>Toca cualquier enlace para navegar y cerrar automáticamente</li>
+                <li>Toca el área oscura (overlay) para cerrar el menú</li>
+                <li>El dropdown de productos funciona dentro del menú lateral</li>
+            </ul>
+            
+            <p><strong>🌐 Selector de Idioma:</strong></p>
+            <ul>
+                <li>Botón centrado con bandera y texto del idioma actual</li>
+                <li>Dropdown que se expande dentro del menú lateral</li>
+                <li>Cambia idioma y cierra el menú automáticamente</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

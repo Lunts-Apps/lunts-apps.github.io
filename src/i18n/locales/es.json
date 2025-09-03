@@ -1,0 +1,309 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "jobs": "Empleos",
+    "contact": "Contacto"
+  },
+  "language": {
+    "english": "English",
+    "spanish": "Español",
+    "french": "Français"
+  },
+  "home": {
+    "welcome": "Bienvenido a Bitsquid",
+    "subtitle": "Creando aplicaciones móviles innovadoras para usuarios en todo el mundo",
+    "description": "Bitsquid crea aplicaciones móviles innovadoras para usuarios en todo el mundo. Nuestro objetivo es desarrollar experiencias digitales únicas que conecten, inspiren y aporten valor real. Descubre Lunts, nuestra app de citas universitarias con beneficios exclusivos para estudiantes.",
+    "cta": "Descubre Nuestros Productos",
+    "sections": {
+      "innovation": {
+        "title": "Nuestra Innovación"
+      },
+      "about": {
+        "title": "Acerca de Bitsquid",
+        "description1": "Somos apasionados por crear aplicaciones móviles innovadoras que transforman la forma en que las personas se conectan e interactúan en el mundo digital. Nuestro equipo combina tecnología de vanguardia con diseño centrado en el usuario para ofrecer experiencias excepcionales.",
+        "description2": "Desde aplicaciones de citas universitarias hasta soluciones empresariales, construimos productos que importan y marcan una diferencia real en la vida de las personas."
+      },
+      "whyChoose": {
+        "title": "Por Qué Elegir Bitsquid",
+        "features": {
+          "innovation": {
+            "title": "Innovación Primero",
+            "description": "Aprovechamos las últimas tecnologías y tendencias de diseño para crear aplicaciones móviles de vanguardia que se destacan en el mercado."
+          },
+          "userCentered": {
+            "title": "Diseño Centrado en el Usuario",
+            "description": "Cada decisión que tomamos está impulsada por las necesidades y comentarios de los usuarios, asegurando que nuestras aplicaciones brinden experiencias excepcionales."
+          },
+          "security": {
+            "title": "Seguridad y Privacidad",
+            "description": "Priorizamos la privacidad del usuario y la seguridad de los datos, implementando prácticas líderes en la industria para proteger la información de nuestros usuarios."
+          }
+        }
+      }
+    },
+    "carousel": {
+      "bitsquid": {
+        "title": "Innovación Bitsquid",
+        "description": "Liderando el futuro de las aplicaciones móviles con tecnología de vanguardia y diseño centrado en el usuario.",
+        "button": "Saber Más"
+      },
+      "lunts": {
+        "title": "Lunts - Citas Universitarias",
+        "description": "¡Encuentra tu match perfecto con Lunts! Conecta con otros estudiantes y crea relaciones significativas.",
+        "button": "Descargar Lunts"
+      },
+      "technology": {
+        "title": "Tecnología e Innovación",
+        "description": "Potenciando conexiones a través de tecnología innovadora y experiencias de usuario excepcionales.",
+        "button": "Nuestra Visión"
+      }
+    }
+  },
+  "products": {
+    "title": "Nuestros Productos",
+    "subtitle": "Soluciones innovadoras para el mundo digital",
+    "lunts": {
+      "title": "Lunts",
+      "subtitle": "App de Citas Universitarias",
+      "description": "¡Encuentra tu match perfecto con Lunts! Conecta con otros estudiantes y crea relaciones significativas. Ya sea que busques amor, amistad o algo intermedio, Lunts te ayuda a encontrar personas afines en tu entorno universitario. Además, disfruta de beneficios exclusivos diseñados para estudiantes. ¡Descarga Lunts ahora y empieza tu viaje hacia nuevas experiencias y conexiones inolvidables!",
+      "features": {
+        "title": "Características Principales",
+        "university": {
+          "title": "Emparejamiento universitario",
+          "description": "Conecta con estudiantes de tu universidad y campus cercanos. Nuestro algoritmo se enfoca en la compatibilidad académica e intereses compartidos."
+        },
+        "benefits": {
+          "title": "Beneficios exclusivos para estudiantes",
+          "description": "Disfruta de descuentos exclusivos para estudiantes, funciones premium gratuitas y ofertas especiales de negocios asociados cerca de tu campus."
+        },
+        "safety": {
+          "title": "Entorno seguro y verificado",
+          "description": "Tu seguridad es nuestra prioridad. Todos los perfiles son verificados a través de direcciones de correo universitarias y nuestro sistema de seguridad avanzado."
+        },
+        "events": {
+          "title": "Integración de eventos del campus",
+          "description": "Mantente conectado con la vida del campus a través de notificaciones de eventos integradas y actividades sociales con otros estudiantes."
+        }
+      },
+      "download": "Descargar Ahora",
+      "watchVideo": "Ver Presentación",
+      "downloadSection": {
+        "title": "Descarga Lunts Hoy",
+        "description": "Disponible en todas las plataformas principales. ¡Comienza tu viaje de citas universitarias ahora!",
+        "googlePlay": "Google Play",
+        "appStore": "App Store",
+        "downloadAndroid": "Descargar para Android",
+        "downloadIOS": "Descargar para iOS"
+      },
+      "legalSection": {
+        "title": "Información Legal"
+      },
+      "privacyPolicy": "Política de Privacidad",
+      "termsConditions": "Términos y Condiciones"
+    }
+  },
+  "jobs": {
+    "title": "Oportunidades Laborales",
+    "noPositions": "Actualmente no hay ofertas disponibles",
+    "description": "Siempre estamos buscando personas talentosas para unirse a nuestro equipo. ¡Vuelve pronto para nuevas oportunidades!",
+    "stayTuned": "Mantente atento a oportunidades emocionantes",
+    "getInTouch": "Ponte en Contacto"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Ponte en contacto con nuestro equipo",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado exitosamente!",
+      "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
+    },
+    "info": {
+      "email": "Correo",
+      "nit": "NIT"
+    }
+  },
+  "footer": {
+    "description": "Creando aplicaciones móviles innovadoras para usuarios en todo el mundo.",
+    "contact": "Contacto",
+    "products": "Productos",
+    "legal": "Legal",
+    "followUs": "Síguenos",
+    "rights": "Todos los derechos reservados."
+  },
+  "legal": {
+    "privacyPolicy": {
+      "title": "Política de Privacidad",
+      "lastUpdated": "Fecha Efectiva: 26 de Enero de 2025",
+      "intro": "Gracias por usar Lunts, una aplicación de citas que conecta personas con intereses comunes. Estamos comprometidos a proteger tu privacidad e información personal. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tu información cuando utilizas nuestros servicios.",
+      "sections": {
+        "informationWeCollect": {
+          "title": "1. Información que Recopilamos:",
+          "items": [
+            {
+              "title": "Información de Registro:",
+              "content": "Cuando te registras en Lunts, recopilamos información personal como tu nombre, dirección de correo electrónico y fecha de nacimiento. También puedes optar por registrarte utilizando servicios de autenticación como Facebook, Google o tu número de teléfono. No almacenamos tus contraseñas directamente, ya que estas son gestionadas a través de los servicios de autenticación correspondientes."
+            },
+            {
+              "title": "Información de Perfil:",
+              "content": "Puedes proporcionar información adicional en tu perfil, como fotografías, descripción personal, ubicación y preferencias de búsqueda."
+            },
+            {
+              "title": "Información de Ubicación:",
+              "content": "Con tu consentimiento, recopilamos información sobre tu ubicación geográfica para proporcionar características basadas en la ubicación, como la búsqueda de usuarios cercanos."
+            },
+            {
+              "title": "Información de Publicidad:",
+              "content": "Recopilamos información sobre las interacciones con los anuncios mostrados en la aplicación, como clics, vistas y acciones tomadas en respuesta a los anuncios."
+            }
+          ]
+        },
+        "useOfInformation": {
+          "title": "2. Uso de tu Información:",
+          "items": [
+            "Usamos tu información para proporcionarte nuestros servicios, incluida la coincidencia de perfiles, facilitar comunicaciones entre usuarios y mejorar la experiencia general de la aplicación.",
+            "Podemos usar tu información para personalizar tu experiencia en Lunts mostrándote perfiles y contenido que creemos pueden interesarte.",
+            "Utilizamos la información recopilada para mejorar y optimizar nuestros servicios, así como para análisis internos y el desarrollo de nuevas características.",
+            "Solo enviamos correos electrónicos informativos o promocionales si optas por recibirlos dentro de la aplicación."
+          ]
+        },
+        "sharingInformation": {
+          "title": "3. Compartir tu Información:",
+          "intro": "No compartimos tu información personal con terceros no afiliados excepto en las siguientes circunstancias:",
+          "items": [
+            "Con tu consentimiento explícito.",
+            "Cuando sea necesario para proporcionar nuestros servicios y operar la aplicación, incluido el uso de proveedores de servicios de terceros.",
+            "Cuando lo exija la ley o en respuesta a procesos legales."
+          ]
+        },
+        "informationSecurity": {
+          "title": "4. Seguridad de la Información:",
+          "items": [
+            "Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger tu información contra el acceso no autorizado, divulgación o alteración.",
+            "Tus chats con otros usuarios están cifrados y almacenados localmente en tus dispositivos, y no tenemos acceso a ellos."
+          ]
+        },
+        "internationalTransfers": {
+          "title": "5. Transferencias Internacionales:",
+          "content": "Al utilizar nuestros servicios, aceptas que tu información pueda ser transferida y procesada en países fuera de tu país de residencia."
+        },
+        "minors": {
+          "title": "6. Menores de Edad:",
+          "content": "Lunts no está dirigido a personas menores de 18 años, y no recopilamos conscientemente información personal de menores."
+        },
+        "reportingModeration": {
+          "title": "7. Reporte y Moderación:",
+          "content": "Proporcionamos una opción de reporte para informar perfiles que violen nuestras políticas, como perfiles falsos, comportamiento inapropiado o contenido inapropiado."
+        },
+        "childSafety": {
+          "title": "8. Seguridad Infantil y Normas contra la Explotación y el Abuso Sexual Infantil (EASI):",
+          "intro": "En Lunts, tomamos muy en serio la protección de los menores y el cumplimiento de las leyes relacionadas con la explotación y abuso sexual infantil (EASI). Nos comprometemos a:",
+          "items": [
+            "Implementar estándares de seguridad infantil y actuar contra el contenido relacionado con el abuso sexual infantil.",
+            "Ofrecer un mecanismo dentro de la aplicación para que los usuarios puedan reportar cualquier preocupación relacionada con la seguridad infantil.",
+            "Trabajar con las autoridades pertinentes cuando se identifiquen incidentes relacionados con la explotación y el abuso infantil.",
+            "Cumplir con todas las leyes locales e internacionales de seguridad infantil.",
+            "Para más información o para reportar cualquier inquietud relacionada con la seguridad infantil, por favor contacta con nuestra persona de contacto en seguridad infantil a lunts.info@gmail.com."
+          ]
+        },
+        "contact": {
+          "title": "9. Contacto:",
+          "content": "Si tienes alguna pregunta, inquietud o comentario sobre esta Política de Privacidad o nuestras prácticas de privacidad en general, no dudes en contactarnos en lunts.info@gmail.com."
+        }
+      },
+      "agreement": "Al utilizar Lunts, aceptas los términos y condiciones establecidos en esta Política de Privacidad. Recomendamos que revises esta política periódicamente para mantenerte informado sobre cómo protegemos tu información.",
+      "contact": {
+        "title": "Información de Contacto",
+        "content": "Si tienes alguna pregunta sobre esta Política de Privacidad, no dudes en contactarnos a través de lunts.info@gmail.com."
+      }
+    },
+    "termsConditions": {
+      "title": "Términos y Condiciones de Uso de Lunts",
+      "lastUpdated": "Fecha de entrada en vigor: 21 de Abril del 2024",
+      "intro": "Por favor, lee atentamente estos Términos y Condiciones antes de utilizar la aplicación móvil Lunts y sus servicios relacionados. Al acceder o utilizar la aplicación, aceptas estar legalmente obligado por estos términos y condiciones.",
+      "sections": {
+        "useOfApp": {
+          "title": "1. Uso de la Aplicación:",
+          "content": [
+            "Al utilizar la aplicación Lunts, aceptas que eres mayor de 18 años y que tienes la capacidad legal para celebrar un contrato vinculante.",
+            "Te comprometes a utilizar la aplicación de manera responsable y de acuerdo con estos términos y condiciones, así como con todas las leyes y regulaciones aplicables."
+          ]
+        },
+        "registration": {
+          "title": "2. Registro y Cuentas:",
+          "content": [
+            "Para acceder a ciertas funciones de la aplicación, puedes necesitar registrarte y crear una cuenta. Debes proporcionar información precisa y completa durante el proceso de registro.",
+            "Eres responsable de mantener la confidencialidad de tu cuenta y contraseña, y aceptas notificarnos de inmediato cualquier uso no autorizado de tu cuenta."
+          ]
+        },
+        "userConduct": {
+          "title": "3. Conducta del Usuario:",
+          "content": [
+            "Te comprometes a no utilizar la aplicación para actividades ilegales, fraudulentas, abusivas o inapropiadas.",
+            "No puedes utilizar la aplicación para acosar, intimidar, difamar o violar los derechos de privacidad de otros usuarios."
+          ]
+        },
+        "userContent": {
+          "title": "4. Contenido del Usuario:",
+          "content": [
+            "Eres el único responsable del contenido que compartes a través de la aplicación, incluidas tus fotografías, descripciones y mensajes.",
+            "Te comprometes a no publicar contenido que sea obsceno, pornográfico, difamatorio, discriminatorio, o que viole los derechos de propiedad intelectual de terceros."
+          ]
+        },
+        "intellectualProperty": {
+          "title": "5. Propiedad Intelectual:",
+          "content": [
+            "La aplicación Lunts y todos sus contenidos, incluidos pero no limitados a textos, gráficos, logotipos, imágenes y software, están protegidos por derechos de autor y otras leyes de propiedad intelectual.",
+            "No puedes reproducir, distribuir, modificar o crear obras derivadas basadas en el contenido de la aplicación sin nuestro consentimiento expreso."
+          ]
+        },
+        "advertising": {
+          "title": "6. Publicidad:",
+          "content": [
+            "Aceptas que la aplicación Lunts puede mostrar anuncios a las cuentas que no son premium.",
+            "Los anuncios pueden ser proporcionados por terceros anunciantes y pueden estar sujetos a políticas de privacidad y términos y condiciones adicionales."
+          ]
+        },
+        "premiumAccount": {
+          "title": "7. Cuenta Premium y Pagos:",
+          "content": [
+            "Al adquirir una cuenta premium en Lunts, aceptas pagar todas las tarifas aplicables y cumplir los siguientes términos adicionales:",
+            "Después del descuento aplicado en la primera suscripción, la renovación se realizará por el total de la suscripción sin ningún descuento.",
+            "La suscripción se renovará automáticamente al final de cada periodo de suscripción hasta que la canceles.",
+            "Se realizará el cargo a tu cuenta al suscribirte y luego en cada renovación. Los importes cobrados cada vez serán los indicados para el período de suscripción que elijas dentro de la aplicación.",
+            "Puedes cancelar en cualquier momento a través de la aplicación Lunts, mediante la tienda o enviando un correo electrónico a lunts.info@gmail.com. Para evitar que se te cobre la renovación de la suscripción, debes cancelar al menos un día antes de que se renueve la suscripción.",
+            "Si cancelas dentro de las 48 horas de comprar la suscripción, debes enviar un correo electrónico a lunts.info@gmail.com solicitando un reembolso. Se realizará un reembolso completo si la solicitud se realiza dentro de estas 48 horas. Después de este período, no se realizarán reembolsos."
+          ]
+        },
+        "modifications": {
+          "title": "8. Modificaciones y Terminación:",
+          "content": [
+            "Nos reservamos el derecho de modificar, suspender o cancelar la aplicación o cualquier parte de ella en cualquier momento y sin previo aviso.",
+            "Nos reservamos el derecho de rescindir tu acceso a la aplicación si consideramos que has violado estos términos y condiciones de alguna manera."
+          ]
+        },
+        "liability": {
+          "title": "9. Limitación de Responsabilidad:",
+          "content": [
+            "En la máxima medida permitida por la ley aplicable, renunciamos a cualquier responsabilidad por daños directos, indirectos, incidentales, especiales o consecuentes que surjan del uso o la imposibilidad de utilizar la aplicación."
+          ]
+        },
+        "applicableLaw": {
+          "title": "10. Ley Aplicable:",
+          "content": [
+            "Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes de los paises en los que operamos, sin tener en cuenta sus disposiciones sobre conflictos de leyes."
+          ]
+        }
+      },
+      "contact": {
+        "title": "Información de Contacto",
+        "content": "Si tienes alguna pregunta sobre estos Términos y Condiciones, no dudes en contactarnos a través de lunts.info@gmail.com.",
+        "agreement": "Al utilizar la aplicación Lunts, aceptas estos Términos y Condiciones en su totalidad. Si no estás de acuerdo con alguno de estos términos, por favor, abstente de utilizar la aplicación."
+      }
+    }
+  }
+}
