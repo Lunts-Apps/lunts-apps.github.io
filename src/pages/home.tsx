@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { colors, Container, ContainerLimited, Button, SectionTitle } from '../styles/global-styles';
+import { colors, Container, Button, SectionTitle } from '../styles/global-styles';
 import Carousel from '../components/ui/carousel';
 
 const HomeContainer = styled.div`

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import emailjs from '@emailjs/browser';
-import { colors, ContainerLimited, Button, SectionTitle } from '../styles/global-styles';
+import { colors, ContainerLimited, Button } from '../styles/global-styles';
 
 const ContactContainer = styled.div`
   min-height: 100vh;
@@ -239,7 +238,7 @@ const Contact: React.FC = () => {
       });
       
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch {
       setStatus({
         type: 'error',
         message: t('contact.form.error')
