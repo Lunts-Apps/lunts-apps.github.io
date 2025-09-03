@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, Container, Button, SectionTitle } from '../styles/global-styles';
@@ -162,14 +162,15 @@ const FeatureDescription = styled.p`
 const Home: React.FC = () => {
   const { t } = useTranslation();
   const { lang } = useParams<{ lang: string }>();
+  const navigate = useNavigate();
 
-  const carouselItems = [
+const carouselItems = [
     {
       id: 1,
       title: '',
       description: '',
       buttonText: '',
-      buttonAction: () => window.location.href = `/${lang}/products`,
+      buttonAction: () => navigate(`/${lang}/products`),
       background: `url(${import.meta.env.BASE_URL}assets/bitsquid-banner.png)`,
       isBanner: true,
     },
@@ -178,7 +179,7 @@ const Home: React.FC = () => {
       title: t('home.carousel.bitsquid.title'),
       description: t('home.carousel.bitsquid.description'),
       buttonText: t('home.carousel.bitsquid.button'),
-      buttonAction: () => window.location.href = `/${lang}/products`,
+      buttonAction: () => navigate(`/${lang}/products`),
       background: `linear-gradient(135deg, ${colors.bitsquid.primary}, #1a1a1a)`,
     },
     {
@@ -186,7 +187,7 @@ const Home: React.FC = () => {
       title: t('home.carousel.lunts.title'),
       description: t('home.carousel.lunts.description'),
       buttonText: t('home.carousel.lunts.button'),
-      buttonAction: () => window.location.href = `/${lang}/products/lunts`,
+      buttonAction: () => navigate(`/${lang}/products/lunts`),
       background: `linear-gradient(135deg, ${colors.lunts.primary}, ${colors.lunts.secondary})`,
     },
     {
@@ -194,7 +195,7 @@ const Home: React.FC = () => {
       title: t('home.carousel.technology.title'),
       description: t('home.carousel.technology.description'),
       buttonText: t('home.carousel.technology.button'),
-      buttonAction: () => window.location.href = `/${lang}/products`,
+      buttonAction: () => navigate(`/${lang}/products`),
       background: `linear-gradient(135deg, ${colors.bitsquid.secondary}, ${colors.bitsquid.accent1})`,
     },
   ];
@@ -206,7 +207,7 @@ const Home: React.FC = () => {
           <HeroTitle>{t('home.welcome')}</HeroTitle>
           <HeroSubtitle>{t('home.subtitle')}</HeroSubtitle>
           <HeroDescription>{t('home.description')}</HeroDescription>
-          <Button onClick={() => window.location.href = `/${lang}/products`}>
+          <Button onClick={() => navigate(`/${lang}/products`)}>
             {t('home.cta')}
           </Button>
         </HeroContent>
