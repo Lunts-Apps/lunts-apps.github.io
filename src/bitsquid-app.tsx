@@ -60,7 +60,7 @@ const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <Router basename="/bitsquid-website">
+      <Router>
         <Routes>
           {/* Redirect root to default language */}
           <Route path="/" element={<Navigate to="/en" replace />} />
