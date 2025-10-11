@@ -194,6 +194,24 @@ const DownloadSection = styled.section`
   background: linear-gradient(135deg, ${colors.lunts.secondary} 0%, ${colors.lunts.secondaryDark} 100%);
   color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="90" r="2.5" fill="white" opacity="0.1"/></svg>') repeat;
+    animation: float 20s linear infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-100px) translateY(-100px); }
+  }
 `;
 
 const DownloadTitle = styled.h2`
@@ -374,7 +392,7 @@ const LuntsPage: React.FC = () => {
       </FeaturesSection>
 
       <DownloadSection>
-        <Container>
+        <Container style={{ position: 'relative', zIndex: 2 }}>
           <DownloadTitle>{t('products.lunts.downloadSection.title')}</DownloadTitle>
           <p style={{ fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9 }}>
             {t('products.lunts.downloadSection.description')}
