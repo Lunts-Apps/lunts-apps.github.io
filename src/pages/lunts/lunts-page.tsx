@@ -316,11 +316,11 @@ const LuntsPage: React.FC = () => {
   const getVideoEmbedUrl = () => {
     switch (lang) {
       case 'es':
-        return 'https://www.youtube.com/embed/8kgAXmBIuTY?autoplay=1&mute=1&rel=0';
+        return 'https://www.youtube.com/embed/8kgAXmBIuTY?autoplay=1&rel=0';
       case 'fr':
-        return 'https://www.youtube.com/embed/eLoWZNH3YSc?autoplay=1&mute=1&rel=0';
+        return 'https://www.youtube.com/embed/eLoWZNH3YSc?autoplay=1&rel=0';
       default:
-        return 'https://www.youtube.com/embed/0jSEvBaDDZ8?autoplay=1&mute=1&rel=0';
+        return 'https://www.youtube.com/embed/0jSEvBaDDZ8?autoplay=1&rel=0';
     }
   };
 
