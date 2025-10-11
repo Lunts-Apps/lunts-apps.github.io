@@ -125,15 +125,26 @@ const LuntsButton = styled(Button)`
   }
 `;
 
-const VideoButton = styled(Button)`
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid white;
+const VideoContainer = styled.div`
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  margin: 2rem auto 0;
 
-  &:hover {
-    background: white;
-    color: ${colors.lunts.primary};
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin: 1.5rem auto 0;
   }
 `;
 
@@ -302,14 +313,14 @@ const LuntsPage: React.FC = () => {
   const { t } = useTranslation();
   const { lang } = useParams<{ lang: string }>();
 
-  const getVideoUrl = () => {
+  const getVideoEmbedUrl = () => {
     switch (lang) {
       case 'es':
-        return 'https://www.youtube.com/watch?v=8kgAXmBIuTY';
+        return 'https://www.youtube.com/embed/8kgAXmBIuTY?autoplay=1&mute=1&rel=0';
       case 'fr':
-        return 'https://www.youtube.com/watch?v=eLoWZNH3YSc';
+        return 'https://www.youtube.com/embed/eLoWZNH3YSc?autoplay=1&mute=1&rel=0';
       default:
-        return 'https://www.youtube.com/watch?v=0jSEvBaDDZ8';
+        return 'https://www.youtube.com/embed/0jSEvBaDDZ8?autoplay=1&mute=1&rel=0';
     }
   };
 
@@ -334,10 +345,16 @@ const LuntsPage: React.FC = () => {
             <LuntsButton onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bitsquid.lunts', '_blank')}>
               <FontAwesomeIcon icon="download" /> {t('products.lunts.download')}
             </LuntsButton>
-            <VideoButton onClick={() => window.open(getVideoUrl(), '_blank')}>
-              <FontAwesomeIcon icon="play" /> {t('products.lunts.watchVideo')}
-            </VideoButton>
           </HeroActions>
+
+          <VideoContainer>
+            <iframe
+              src={getVideoEmbedUrl()}
+              title="Lunts Presentation"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </VideoContainer>
         </HeroContent>
       </HeroSection>
 
