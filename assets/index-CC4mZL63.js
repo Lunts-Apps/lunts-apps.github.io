@@ -1253,6 +1253,15 @@ If it declares any Font Awesome CSS pseudo-elements, they will not be rendered a
   padding: 0 1rem;
   z-index: 3;
   transform: translateY(-50%);
+
+  @media (max-width: 768px) {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+    justify-content: space-between;
+  }
 `,uo=D.button`
   width: 50px;
   height: 50px;
@@ -1281,9 +1290,14 @@ If it declares any Font Awesome CSS pseudo-elements, they will not be rendered a
   }
 
   @media (max-width: 768px) {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    border: 1px solid white;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `,Ll1=D.div`
   position: absolute;
@@ -1293,6 +1307,10 @@ If it declares any Font Awesome CSS pseudo-elements, they will not be rendered a
   display: flex;
   gap: 0.8rem;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    bottom: 3.5rem;
+  }
 `,xl1=D.button`
   width: ${l=>l.isActive?"24px":"8px"};
   height: 8px;
