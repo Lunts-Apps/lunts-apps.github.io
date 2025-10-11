@@ -10,6 +10,117 @@ const FooterContainer = styled.footer<{ isLunts?: boolean }>`
   color: white;
   padding: 3rem 0 1rem;
   margin-top: auto;
+  position: relative;
+  overflow: hidden;
+
+  /* Bitsquid sparkle animation (for all pages except Lunts) */
+  ${props => !props.isLunts && `
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(2px 2px at 20px 30px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 40px 70px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(1px 1px at 90px 40px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(1px 1px at 130px 80px, ${colors.bitsquid.accent2}, transparent),
+        radial-gradient(2px 2px at 160px 30px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(1px 1px at 200px 90px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(2px 2px at 240px 50px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(1px 1px at 280px 20px, ${colors.bitsquid.accent2}, transparent),
+        radial-gradient(1px 1px at 320px 100px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 360px 60px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(1px 1px at 400px 10px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 440px 80px, ${colors.bitsquid.accent2}, transparent),
+        radial-gradient(1px 1px at 480px 40px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 520px 90px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(1px 1px at 560px 25px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 600px 70px, ${colors.bitsquid.accent2}, transparent),
+        radial-gradient(1px 1px at 640px 50px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 680px 15px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(1px 1px at 720px 85px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 760px 45px, ${colors.bitsquid.accent2}, transparent);
+      background-repeat: repeat;
+      background-size: 800px 120px;
+      animation: sparkle 4s ease-in-out infinite alternate, drift 20s linear infinite;
+      opacity: 0.8;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(1px 1px at 50px 60px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 100px 20px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(1px 1px at 150px 100px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 200px 40px, ${colors.bitsquid.accent2}, transparent),
+        radial-gradient(1px 1px at 250px 80px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 300px 10px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(1px 1px at 350px 70px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 400px 30px, ${colors.bitsquid.accent2}, transparent),
+        radial-gradient(1px 1px at 450px 90px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 500px 50px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(1px 1px at 550px 15px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 600px 85px, ${colors.bitsquid.accent2}, transparent),
+        radial-gradient(1px 1px at 650px 35px, ${colors.bitsquid.contrast}, transparent),
+        radial-gradient(2px 2px at 700px 75px, ${colors.bitsquid.accent1}, transparent),
+        radial-gradient(1px 1px at 750px 25px, ${colors.bitsquid.contrast}, transparent);
+      background-repeat: repeat;
+      background-size: 800px 120px;
+      animation: sparkle 3s ease-in-out infinite alternate-reverse, drift 25s linear infinite reverse;
+      opacity: 0.6;
+    }
+
+    @keyframes sparkle {
+      0% { 
+        opacity: 0.3;
+        transform: scale(0.8);
+      }
+      50% { 
+        opacity: 0.9;
+        transform: scale(1.1);
+      }
+      100% { 
+        opacity: 0.5;
+        transform: scale(0.9);
+      }
+    }
+
+    @keyframes drift {
+      0% { 
+        transform: translateX(-100px) translateY(0px);
+      }
+      100% { 
+        transform: translateX(100px) translateY(-50px);
+      }
+    }
+  `}
+
+  /* Lunts floating dots animation (only for Lunts page) */
+  ${props => props.isLunts && `
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="90" r="2.5" fill="white" opacity="0.1"/></svg>') repeat;
+      animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateX(0) translateY(0); }
+      100% { transform: translateX(-100px) translateY(-100px); }
+    }
+  `}
 `;
 
 const FooterContent = styled(Container)`
@@ -17,6 +128,8 @@ const FooterContent = styled(Container)`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -101,6 +214,8 @@ const FooterBottom = styled.div`
   text-align: center;
   opacity: 0.7;
   font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
 `;
 
 const Footer: React.FC = () => {
