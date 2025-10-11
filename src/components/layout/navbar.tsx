@@ -77,7 +77,7 @@ const NavLinks = styled.div<{ $isOpen?: boolean; $isLunts?: boolean }>`
     height: 100vh;
     background: ${props => props.$isLunts ? colors.lunts.primary : colors.bitsquid.primary};
     flex-direction: column;
-    padding: 80px 1rem 2rem 1rem;
+    padding: 2rem 1rem 2rem 1rem;
     transform: translateX(${props => props.$isOpen ? '0' : '-100%'});
     transition: transform 0.3s ease;
     box-shadow: ${props => props.$isOpen ? '2px 0 10px rgba(0, 0, 0, 0.3)' : 'none'};
@@ -108,6 +108,12 @@ const NavLink = styled(Link)<{ $isActive?: boolean; $isLunts?: boolean }>`
     transform: translateY(-2px);
   }
 
+  &.desktop-only {
+    @media (max-width: 768px) {
+      display: none !important;
+    }
+  }
+
   @media (max-width: 768px) {
     width: 100%;
     text-align: center;
@@ -134,12 +140,60 @@ const ProductsDropdown = styled.div`
   
   @media (max-width: 768px) {
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 0.5rem;
   }
 `;
 
-const DropdownContent = styled.div<{ $isOpen?: boolean; $isLunts?: boolean }>`
+const ProductsToggleButton = styled.button<{ $isActive?: boolean; $isLunts?: boolean; $isExpanded?: boolean }>`
+  width: 100%;
+  background: none;
+  border: none;
+  color: ${props => props.$isLunts ? 'white' : colors.bitsquid.contrast};
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  display: none;
+
+  ${props => props.$isActive && `
+    background: ${props.$isLunts ? colors.lunts.secondaryDark : colors.bitsquid.accent1};
+    color: white;
+  `}
+
+  &:hover {
+    background: ${props => props.$isLunts ? colors.lunts.secondaryDark : colors.bitsquid.accent1};
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    padding: 1.2rem 1rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    
+    &:hover, &:active, &:focus {
+      background: ${props => props.$isLunts ? colors.lunts.secondaryDark : colors.bitsquid.accent1};
+      color: white;
+      transform: none;
+    }
+
+    .chevron {
+      transition: transform 0.3s ease;
+      transform: rotate(${props => props.$isExpanded ? '180deg' : '0deg'});
+    }
+  }
+`;
+
+const DropdownContent = styled.div<{ $isOpen?: boolean; $isLunts?: boolean; $isMobileExpanded?: boolean }>`
   position: absolute;
   top: 100%;
   left: 0;
@@ -160,9 +214,15 @@ const DropdownContent = styled.div<{ $isOpen?: boolean; $isLunts?: boolean }>`
     visibility: visible;
     transform: none;
     box-shadow: none;
-    background: transparent;
-    padding: 0;
-    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    margin: 0 1rem 0.5rem 1rem;
+    padding: ${props => props.$isMobileExpanded ? '0.8rem 0' : '0'};
+    max-height: ${props => props.$isMobileExpanded ? '200px' : '0'};
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 `;
 
@@ -179,12 +239,29 @@ const DropdownLink = styled(Link)<{ $isLunts?: boolean }>`
   }
 
   @media (max-width: 768px) {
-    padding: 0.5rem 1rem;
-    text-align: center;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin: 0 0.5rem;
+    position: relative;
+    
+    &:before {
+      content: '→';
+      margin-right: 0.8rem;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
     
     &:hover, &:active, &:focus {
       background: ${props => props.$isLunts ? colors.lunts.secondaryDark : colors.bitsquid.accent1};
       color: white;
+      transform: translateX(4px);
+      
+      &:before {
+        opacity: 1;
+        transform: translateX(4px);
+      }
     }
   }
 `;
@@ -320,6 +397,27 @@ const MobileMenuButton = styled.button<{ $isLunts?: boolean }>`
   }
 `;
 
+const MobileMenuLogo = styled.div`
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+  }
+`;
+
+const MobileLogoImage = styled.img<{ $isLunts?: boolean }>`
+  height: ${props => props.$isLunts ? '32px' : '45px'};
+  width: auto;
+  filter: ${props => props.$isLunts ? 'brightness(0) invert(1)' : 'none'};
+  transition: all 0.3s ease;
+`;
+
 const Navbar: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -329,6 +427,7 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isMobileProductsExpanded, setIsMobileProductsExpanded] = useState(false);
 
   // Check if we're on a Lunts page
   const isLuntsPage = location.pathname.includes('/products/lunts');
@@ -367,6 +466,11 @@ const Navbar: React.FC = () => {
 
   const handleMobileMenuClose = () => {
     setIsMobileMenuOpen(false);
+    setIsMobileProductsExpanded(false);
+  };
+
+  const handleMobileProductsToggle = () => {
+    setIsMobileProductsExpanded(!isMobileProductsExpanded);
   };
 
   // Function to scroll to top when clicking header links
@@ -398,6 +502,22 @@ const Navbar: React.FC = () => {
           </Logo>
 
           <NavLinks $isOpen={isMobileMenuOpen} $isLunts={isLuntsPage}>
+          <MobileMenuLogo>
+            {isLuntsPage ? (
+              <MobileLogoImage 
+                src={luntsLogo} 
+                alt="Lunts" 
+                $isLunts={isLuntsPage}
+              />
+            ) : (
+              <MobileLogoImage 
+                src={bitsquidLogo} 
+                alt="Bitsquid" 
+                $isLunts={isLuntsPage}
+              />
+            )}
+          </MobileMenuLogo>
+          
           <NavLink 
             to={`/${lang}`} 
             $isActive={isActiveRoute('/')}
@@ -414,6 +534,7 @@ const Navbar: React.FC = () => {
             onMouseEnter={() => setIsProductsDropdownOpen(true)}
             onMouseLeave={() => setIsProductsDropdownOpen(false)}
           >
+            {/* Desktop version */}
             <NavLink 
               to={`/${lang}/products`}
               $isActive={isActiveRoute('/products')}
@@ -422,10 +543,28 @@ const Navbar: React.FC = () => {
                 handleMobileMenuClose();
                 handleLinkClick();
               }}
+              style={{ display: 'block' }}
+              className="desktop-only"
             >
               {t('nav.products')} <FontAwesomeIcon icon="chevron-down" />
             </NavLink>
-            <DropdownContent $isOpen={isProductsDropdownOpen} $isLunts={isLuntsPage}>
+            
+            {/* Mobile version */}
+            <ProductsToggleButton
+              $isActive={isActiveRoute('/products')}
+              $isLunts={isLuntsPage}
+              $isExpanded={isMobileProductsExpanded}
+              onClick={handleMobileProductsToggle}
+            >
+              {t('nav.products')}
+              <FontAwesomeIcon icon="chevron-down" className="chevron" />
+            </ProductsToggleButton>
+            
+            <DropdownContent 
+              $isOpen={isProductsDropdownOpen} 
+              $isLunts={isLuntsPage}
+              $isMobileExpanded={isMobileProductsExpanded}
+            >
               <DropdownLink 
                 to={`/${lang}/products/lunts`} 
                 $isLunts={isLuntsPage}
