@@ -83,13 +83,19 @@ const LuntsContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: flex-start;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
   }
+`;
+
+const RightColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 `;
 
 const LuntsInfo = styled.div`
@@ -240,19 +246,25 @@ const DownloadButton = styled.a`
   }
 `;
 
-const VideoSection = styled.div`
-  margin-top: 2rem;
-`;
-
-const VideoButton = styled(Button)`
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid white;
+const VideoContainer = styled.div`
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 0 auto;
 
-  &:hover {
-    background: white;
-    color: ${colors.lunts.primary};
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;
 
@@ -260,14 +272,14 @@ const Products: React.FC = () => {
   const { t } = useTranslation();
   const { lang } = useParams<{ lang: string }>();
 
-  const getVideoUrl = () => {
+  const getVideoEmbedUrl = () => {
     switch (lang) {
       case 'es':
-        return 'https://www.youtube.com/watch?v=8kgAXmBIuTY';
+        return 'https://www.youtube.com/embed/8kgAXmBIuTY?autoplay=1&mute=1&rel=0';
       case 'fr':
-        return 'https://www.youtube.com/watch?v=eLoWZNH3YSc';
+        return 'https://www.youtube.com/embed/eLoWZNH3YSc?autoplay=1&mute=1&rel=0';
       default:
-        return 'https://www.youtube.com/watch?v=0jSEvBaDDZ8';
+        return 'https://www.youtube.com/embed/0jSEvBaDDZ8?autoplay=1&mute=1&rel=0';
     }
   };
 
@@ -294,11 +306,6 @@ const Products: React.FC = () => {
                     {t('products.lunts.download')}
                   </LuntsButton>
 
-                  <VideoSection>
-                    <VideoButton onClick={() => window.open(getVideoUrl(), '_blank')}>
-                      <FontAwesomeIcon icon="play" /> {t('products.lunts.watchVideo')}
-                    </VideoButton>
-                  </VideoSection>
                 </LuntsActions>
 
                 <DownloadSection>
@@ -332,35 +339,46 @@ const Products: React.FC = () => {
                 </DownloadSection>
               </LuntsInfo>
 
-              <LuntsFeatures>
-                <FeatureItem>
-                  <div className="icon">
-                    <FontAwesomeIcon icon="graduation-cap" />
-                  </div>
-                  <div className="text">{t('products.lunts.features.university.title')}</div>
-                </FeatureItem>
+              <RightColumn>
+                <VideoContainer>
+                  <iframe
+                    src={getVideoEmbedUrl()}
+                    title="Lunts Presentation"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </VideoContainer>
 
-                <FeatureItem>
-                  <div className="icon">
-                    <FontAwesomeIcon icon="gift" />
-                  </div>
-                  <div className="text">{t('products.lunts.features.benefits.title')}</div>
-                </FeatureItem>
+                <LuntsFeatures>
+                  <FeatureItem>
+                    <div className="icon">
+                      <FontAwesomeIcon icon="graduation-cap" />
+                    </div>
+                    <div className="text">{t('products.lunts.features.university.title')}</div>
+                  </FeatureItem>
 
-                <FeatureItem>
-                  <div className="icon">
-                    <FontAwesomeIcon icon="shield-alt" />
-                  </div>
-                  <div className="text">{t('products.lunts.features.safety.title')}</div>
-                </FeatureItem>
+                  <FeatureItem>
+                    <div className="icon">
+                      <FontAwesomeIcon icon="gift" />
+                    </div>
+                    <div className="text">{t('products.lunts.features.benefits.title')}</div>
+                  </FeatureItem>
 
-                <FeatureItem>
-                  <div className="icon">
-                    <FontAwesomeIcon icon="calendar" />
-                  </div>
-                  <div className="text">{t('products.lunts.features.events.title')}</div>
-                </FeatureItem>
-              </LuntsFeatures>
+                  <FeatureItem>
+                    <div className="icon">
+                      <FontAwesomeIcon icon="shield-alt" />
+                    </div>
+                    <div className="text">{t('products.lunts.features.safety.title')}</div>
+                  </FeatureItem>
+
+                  <FeatureItem>
+                    <div className="icon">
+                      <FontAwesomeIcon icon="calendar" />
+                    </div>
+                    <div className="text">{t('products.lunts.features.events.title')}</div>
+                  </FeatureItem>
+                </LuntsFeatures>
+              </RightColumn>
             </LuntsContent>
           </LuntsShowcase>
         </Container>
