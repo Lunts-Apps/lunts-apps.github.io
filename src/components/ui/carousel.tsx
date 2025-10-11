@@ -149,6 +149,15 @@ const CarouselControls = styled.div`
   padding: 0 1rem;
   z-index: 3;
   transform: translateY(-50%);
+
+  @media (max-width: 768px) {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+    justify-content: space-between;
+  }
 `;
 
 const ControlButton = styled.button`
@@ -179,9 +188,14 @@ const ControlButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    border: 1px solid white;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `;
 
@@ -193,6 +207,10 @@ const CarouselIndicators = styled.div`
   display: flex;
   gap: 0.8rem;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    bottom: 3.5rem;
+  }
 `;
 
 const Indicator = styled.button<{ isActive: boolean }>`
