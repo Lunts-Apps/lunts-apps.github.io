@@ -209,7 +209,7 @@ const CarouselIndicators = styled.div`
   z-index: 3;
 
   @media (max-width: 768px) {
-    bottom: 3.5rem;
+    display: none;
   }
 `;
 
