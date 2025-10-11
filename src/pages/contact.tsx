@@ -6,12 +6,18 @@ import { colors, ContainerLimited, Button } from '../styles/global-styles';
 
 const ContactContainer = styled.div`
   min-height: 100vh;
-  padding-top: 70px;
+  padding-top: 120px;
+  padding-bottom: 80px;
   background: linear-gradient(135deg, ${colors.bitsquid.primary} 0%, ${colors.bitsquid.secondary} 100%);
+
+  @media (max-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
 `;
 
 const ContactContent = styled(ContainerLimited)`
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -20,7 +26,7 @@ const ContactContent = styled(ContainerLimited)`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 2rem 1.5rem;
   }
 `;
 
