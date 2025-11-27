@@ -110,6 +110,12 @@ const HeroActions = styled.div`
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 const LuntsButton = styled(Button)`
@@ -241,6 +247,12 @@ const DownloadButtons = styled.div`
   justify-content: center;
   margin: 3rem 0;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 const DownloadButton = styled.a`
@@ -254,6 +266,7 @@ const DownloadButton = styled.a`
   border-radius: 16px;
   transition: all 0.3s ease;
   min-width: 200px;
+  flex: 0 0 auto;
 
   &:hover {
     transform: translateY(-5px);
@@ -262,21 +275,47 @@ const DownloadButton = styled.a`
 
   .icon {
     font-size: 2rem;
+    flex-shrink: 0;
   }
 
   .text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    flex: 1;
 
     .title {
       font-weight: 700;
       font-size: 1.2rem;
+      white-space: nowrap;
     }
 
     .subtitle {
       font-size: 0.9rem;
       opacity: 0.7;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+    padding: 1.2rem 1.5rem;
+    justify-content: flex-start;
+
+    .icon {
+      font-size: 1.8rem;
+    }
+
+    .text {
+      .title {
+        font-size: 1.1rem;
+      }
+
+      .subtitle {
+        font-size: 0.85rem;
+      }
     }
   }
 `;
