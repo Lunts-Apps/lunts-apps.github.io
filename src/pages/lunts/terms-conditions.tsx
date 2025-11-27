@@ -182,6 +182,9 @@ const LuntsTermsConditions: React.FC = () => {
 
           <Section>
             <SectionTitle>{t('legal.termsConditions.sections.premiumAccount.title')}</SectionTitle>
+            <SectionContent>
+              {t('legal.termsConditions.sections.premiumAccount.description')}
+            </SectionContent>
             <ul style={{ marginLeft: '2rem', marginBottom: '1.5rem' }}>
               {(t('legal.termsConditions.sections.premiumAccount.content', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                 <li key={index} style={{ marginBottom: '0.5rem' }}>{item}</li>

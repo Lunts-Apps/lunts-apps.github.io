@@ -270,13 +270,14 @@
         },
         "premiumAccount": {
           "title": "7. Compte Premium et Paiements :",
+          "description": "En souscrivant à un compte premium sur Lunts, vous acceptez de payer tous les frais applicables et de respecter les termes supplémentaires suivants :",
           "content": [
-            "En souscrivant à un compte premium sur Lunts, vous acceptez de payer tous les frais applicables et de respecter les termes supplémentaires suivants :",
             "Après la réduction appliquée lors du premier abonnement, le renouvellement se fera au tarif complet sans réduction.",
             "L'abonnement se renouvelle automatiquement à la fin de chaque période d'abonnement jusqu'à ce que vous l'annuliez.",
             "Votre compte sera débité lors de l'inscription puis à chaque renouvellement. Les montants facturés à chaque fois seront ceux indiqués pour la période d'abonnement que vous choisissez dans l'application.",
             "Vous pouvez annuler à tout moment via l'application Lunts, par le biais du magasin ou en envoyant un e-mail à lunts.info@gmail.com. Pour éviter d'être facturé pour le renouvellement de l'abonnement, vous devez annuler au moins un jour avant son renouvellement.",
-            "Si vous annulez dans les 48 heures suivant l'achat de l'abonnement, vous devez envoyer un e-mail à lunts.info@gmail.com pour demander un remboursement. Un remboursement complet sera effectué si la demande est faite dans ce délai de 48 heures. Aucun remboursement ne sera effectué après cette période."
+            "Si vous annulez dans les 48 heures suivant l'achat de l'abonnement, vous devez envoyer un e-mail à lunts.info@gmail.com pour demander un remboursement. Un remboursement complet sera effectué si la demande est faite dans ce délai de 48 heures. Aucun remboursement ne sera effectué après cette période.",
+            "Si vous supprimez votre compte ou désinstallez l'application alors que vous avez un abonnement actif sans l'annuler d'abord, l'abonnement continuera à se renouveler automatiquement. Veuillez noter que votre compte Lunts est indépendant de l'abonnement acheté via le magasin, donc supprimer votre compte ou désinstaller l'application n'annulera pas automatiquement votre abonnement. Nous ne sommes pas responsables des frais encourus si vous n'annulez pas l'abonnement."
           ]
         },
         "modifications": {

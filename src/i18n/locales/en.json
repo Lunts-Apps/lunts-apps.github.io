@@ -270,13 +270,14 @@
         },
         "premiumAccount": {
           "title": "7. Premium Account and Payments:",
+          "description": "By purchasing a premium account on Lunts, you agree to pay all applicable fees and abide by the following additional terms:",
           "content": [
-            "By purchasing a premium account on Lunts, you agree to pay all applicable fees and abide by the following additional terms:",
             "After the discount applied in the first subscription, the renewal will be charged at the full subscription amount without any discount.",
             "The subscription will automatically renew at the end of each subscription period unless canceled.",
             "Your account will be charged upon subscribing and then at each renewal. The amounts charged each time will be as indicated for the subscription period you choose within the application.",
             "You can cancel anytime through the Lunts application, via the store, or by emailing lunts.info@gmail.com. To avoid being charged for subscription renewal, you must cancel at least one day before the renewal date.",
-            "If you cancel within 48 hours of subscribing, you must email lunts.info@gmail.com requesting a refund. A full refund will be issued if the request is made within this 48-hour period. No refunds will be issued after this period."
+            "If you cancel within 48 hours of subscribing, you must email lunts.info@gmail.com requesting a refund. A full refund will be issued if the request is made within this 48-hour period. No refunds will be issued after this period.",
+            "If you delete your account or uninstall the app while you have an active subscription without canceling it first, the subscription will continue to renew automatically. Please note that your Lunts account is independent from the subscription purchased through the store, so deleting your account or removing the app will not automatically cancel your subscription. We are not responsible for any charges incurred if you do not cancel the subscription."
           ]
         },
         "modifications": {

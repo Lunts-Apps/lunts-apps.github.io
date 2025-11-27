@@ -270,13 +270,14 @@
         },
         "premiumAccount": {
           "title": "7. Cuenta Premium y Pagos:",
+          "description": "Al adquirir una cuenta premium en Lunts, aceptas pagar todas las tarifas aplicables y cumplir los siguientes términos adicionales:",
           "content": [
-            "Al adquirir una cuenta premium en Lunts, aceptas pagar todas las tarifas aplicables y cumplir los siguientes términos adicionales:",
             "Después del descuento aplicado en la primera suscripción, la renovación se realizará por el total de la suscripción sin ningún descuento.",
             "La suscripción se renovará automáticamente al final de cada periodo de suscripción hasta que la canceles.",
             "Se realizará el cargo a tu cuenta al suscribirte y luego en cada renovación. Los importes cobrados cada vez serán los indicados para el período de suscripción que elijas dentro de la aplicación.",
             "Puedes cancelar en cualquier momento a través de la aplicación Lunts, mediante la tienda o enviando un correo electrónico a lunts.info@gmail.com. Para evitar que se te cobre la renovación de la suscripción, debes cancelar al menos un día antes de que se renueve la suscripción.",
-            "Si cancelas dentro de las 48 horas de comprar la suscripción, debes enviar un correo electrónico a lunts.info@gmail.com solicitando un reembolso. Se realizará un reembolso completo si la solicitud se realiza dentro de estas 48 horas. Después de este período, no se realizarán reembolsos."
+            "Si cancelas dentro de las 48 horas de comprar la suscripción, debes enviar un correo electrónico a lunts.info@gmail.com solicitando un reembolso. Se realizará un reembolso completo si la solicitud se realiza dentro de estas 48 horas. Después de este período, no se realizarán reembolsos.",
+            "Si eliminas tu cuenta o desinstalas la aplicación mientras tienes una suscripción activa sin cancelarla primero, la suscripción continuará renovándose automáticamente. Ten en cuenta que tu cuenta de Lunts es independiente de la suscripción comprada a través de la tienda, por lo que eliminar tu cuenta o desinstalar la aplicación no cancelará automáticamente tu suscripción. No somos responsables de ningún cargo incurrido si no cancelas la suscripción."
           ]
         },
         "modifications": {
