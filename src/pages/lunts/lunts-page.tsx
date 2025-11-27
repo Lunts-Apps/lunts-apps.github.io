@@ -341,12 +341,6 @@ const LuntsPage: React.FC = () => {
           <HeroSubtitle>{t('products.lunts.subtitle')}</HeroSubtitle>
           <HeroDescription>{t('products.lunts.description')}</HeroDescription>
           
-          <HeroActions>
-            <LuntsButton onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bitsquid.lunts', '_blank')}>
-              <FontAwesomeIcon icon="download" /> {t('products.lunts.download')}
-            </LuntsButton>
-          </HeroActions>
-
           <VideoContainer>
             <iframe
               src={getVideoEmbedUrl()}
@@ -355,6 +349,46 @@ const LuntsPage: React.FC = () => {
               allowFullScreen
             />
           </VideoContainer>
+
+          <HeroActions style={{ marginTop: '3rem' }}>
+            <DownloadButton 
+              href="https://play.google.com/store/apps/details?id=com.bitsquid.lunts"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ 
+                background: 'white', 
+                color: colors.lunts.primary,
+                border: `2px solid ${colors.lunts.primary}`
+              }}
+            >
+              <div className="icon">
+                <FontAwesomeIcon icon={['fab', 'google-play']} />
+              </div>
+              <div className="text">
+                <div className="title">{t('products.lunts.downloadSection.googlePlay')}</div>
+                <div className="subtitle">{t('products.lunts.downloadSection.downloadAndroid')}</div>
+              </div>
+            </DownloadButton>
+
+            <DownloadButton 
+              href="https://www.apple.com/app-store/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ 
+                background: 'white', 
+                color: colors.lunts.primary,
+                border: `2px solid ${colors.lunts.primary}`
+              }}
+            >
+              <div className="icon">
+                <FontAwesomeIcon icon={['fab', 'apple']} />
+              </div>
+              <div className="text">
+                <div className="title">{t('products.lunts.downloadSection.appStore')}</div>
+                <div className="subtitle">{t('products.lunts.downloadSection.downloadIOS')}</div>
+              </div>
+            </DownloadButton>
+          </HeroActions>
         </HeroContent>
       </HeroSection>
 
