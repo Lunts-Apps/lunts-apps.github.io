@@ -255,7 +255,7 @@ const Footer: React.FC = () => {
               <FontAwesomeIcon icon={['fab', 'facebook']} />
             </SocialLink>
             <SocialLink 
-              href="https://tiktok.com" 
+              href="https://www.tiktok.com/@lunts.app" 
               target="_blank" 
               rel="noopener noreferrer"
               isLunts={isLuntsPage}
