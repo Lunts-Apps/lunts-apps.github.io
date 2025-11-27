@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { colors, Container, Button } from '../../styles/global-styles';
+import { colors, Container } from '../../styles/global-styles';
 import luntsIsoLogo from '../../assets/lunts-iso-logo.svg';
 
 const LuntsContainer = styled.div`
@@ -115,19 +115,6 @@ const HeroActions = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-  }
-`;
-
-const LuntsButton = styled(Button)`
-  background: white;
-  color: ${colors.lunts.primary};
-  border: 2px solid white;
-  min-width: 200px;
-
-  &:hover {
-    background: transparent;
-    color: white;
-    border-color: white;
   }
 `;
 
