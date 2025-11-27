@@ -13,7 +13,9 @@ const HomeContainer = styled.div`
 
 const HeroSection = styled.section`
   background: linear-gradient(135deg, #000000 0%, ${colors.bitsquid.primary} 30%, ${colors.bitsquid.secondary} 100%);
-  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   position: relative;
   overflow: hidden;
 
@@ -109,6 +111,11 @@ const HeroContent = styled(Container)`
   position: relative;
   z-index: 1;
   text-align: center;
+  padding: 4rem 2rem;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
 `;
 
 const HeroTitle = styled.h1`
@@ -140,7 +147,7 @@ const HeroSubtitle = styled.p`
 
 const HeroDescription = styled.p`
   font-size: 1.1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: ${colors.bitsquid.neutral};
   max-width: 800px;
   margin-left: auto;
@@ -149,8 +156,101 @@ const HeroDescription = styled.p`
 
   @media (max-width: 768px) {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
+`;
+
+const HeroHighlights = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+`;
+
+const HighlightCard = styled.div`
+  background: rgba(155, 93, 229, 0.1);
+  border: 1px solid rgba(155, 93, 229, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(155, 93, 229, 0.2);
+  }
+`;
+
+const HighlightIcon = styled.div`
+  width: 50px;
+  height: 50px;
+  background: ${colors.bitsquid.accent1};
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.2rem;
+  color: white;
+`;
+
+const HighlightTitle = styled.h3`
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: ${colors.bitsquid.contrast};
+`;
+
+const HighlightText = styled.p`
+  font-size: 0.9rem;
+  color: ${colors.bitsquid.neutral};
+  line-height: 1.5;
+`;
+
+const HeroStats = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+    margin: 1.5rem 0 2rem;
+  }
+`;
+
+const StatItem = styled.div`
+  text-align: center;
+`;
+
+const StatNumber = styled.div`
+  font-size: 2rem;
+  font-weight: 800;
+  color: ${colors.bitsquid.accent1};
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const StatLabel = styled.div`
+  font-size: 0.9rem;
+  color: ${colors.bitsquid.neutral};
+  text-transform: uppercase;
+  letter-spacing: 1px;
 `;
 
 const CarouselSection = styled.section`
@@ -326,13 +426,19 @@ const Home: React.FC = () => {
   const { lang } = useParams<{ lang: string }>();
   const navigate = useNavigate();
 
+  // Function to handle navigation with scroll to top
+  const handleNavigateWithScroll = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
 const carouselItems = [
     {
       id: 1,
       title: '',
       description: '',
       buttonText: '',
-      buttonAction: () => navigate(`/${lang}/products`),
+      buttonAction: () => handleNavigateWithScroll(`/${lang}/products`),
       background: `url(${import.meta.env.BASE_URL}assets/bitsquid-banner.png)`,
       isBanner: true,
     },
@@ -341,7 +447,7 @@ const carouselItems = [
       title: t('home.carousel.bitsquid.title'),
       description: t('home.carousel.bitsquid.description'),
       buttonText: t('home.carousel.bitsquid.button'),
-      buttonAction: () => navigate(`/${lang}/products`),
+      buttonAction: () => handleNavigateWithScroll(`/${lang}/products`),
       background: `linear-gradient(135deg, ${colors.bitsquid.primary}, #1a1a1a)`,
     },
     {
@@ -349,7 +455,7 @@ const carouselItems = [
       title: t('home.carousel.lunts.title'),
       description: t('home.carousel.lunts.description'),
       buttonText: t('home.carousel.lunts.button'),
-      buttonAction: () => navigate(`/${lang}/products/lunts`),
+      buttonAction: () => handleNavigateWithScroll(`/${lang}/products/lunts`),
       background: `linear-gradient(135deg, ${colors.lunts.primary}, ${colors.lunts.secondary})`,
     },
     {
@@ -357,7 +463,7 @@ const carouselItems = [
       title: t('home.carousel.technology.title'),
       description: t('home.carousel.technology.description'),
       buttonText: t('home.carousel.technology.button'),
-      buttonAction: () => navigate(`/${lang}/products`),
+      buttonAction: () => handleNavigateWithScroll(`/${lang}/products`),
       background: `linear-gradient(135deg, ${colors.bitsquid.secondary}, ${colors.bitsquid.accent1})`,
     },
   ];
@@ -369,7 +475,49 @@ const carouselItems = [
           <HeroTitle>{t('home.welcome')}</HeroTitle>
           <HeroSubtitle>{t('home.subtitle')}</HeroSubtitle>
           <HeroDescription>{t('home.description')}</HeroDescription>
-          <Button onClick={() => navigate(`/${lang}/products`)}>
+          
+          <HeroHighlights>
+            <HighlightCard onClick={() => handleNavigateWithScroll(`/${lang}/products/lunts`)}>
+              <HighlightIcon>
+                <FontAwesomeIcon icon="mobile-alt" />
+              </HighlightIcon>
+              <HighlightTitle>Aplicaciones Móviles</HighlightTitle>
+              <HighlightText>Desarrollamos apps innovadoras que conectan personas y transforman experiencias digitales</HighlightText>
+            </HighlightCard>
+            
+            <HighlightCard onClick={() => handleNavigateWithScroll(`/${lang}/products/lunts`)}>
+              <HighlightIcon>
+                <FontAwesomeIcon icon="heart" />
+              </HighlightIcon>
+              <HighlightTitle>Lunts Dating</HighlightTitle>
+              <HighlightText>Nuestra app estrella para citas universitarias con beneficios exclusivos para estudiantes</HighlightText>
+            </HighlightCard>
+            
+            <HighlightCard onClick={() => handleNavigateWithScroll(`/${lang}/products/lunts`)}>
+              <HighlightIcon>
+                <FontAwesomeIcon icon="globe" />
+              </HighlightIcon>
+              <HighlightTitle>Alcance Global</HighlightTitle>
+              <HighlightText>Creando soluciones para usuarios en todo el mundo con tecnología de vanguardia</HighlightText>
+            </HighlightCard>
+          </HeroHighlights>
+
+          <HeroStats>
+            <StatItem>
+              <StatNumber>2023</StatNumber>
+              <StatLabel>Fundada</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>1+</StatNumber>
+              <StatLabel>Aplicaciones</StatLabel>
+            </StatItem>
+            <StatItem>
+              <StatNumber>100%</StatNumber>
+              <StatLabel>Innovación</StatLabel>
+            </StatItem>
+          </HeroStats>
+
+          <Button onClick={() => handleNavigateWithScroll(`/${lang}/products`)}>
             {t('home.cta')}
           </Button>
         </HeroContent>

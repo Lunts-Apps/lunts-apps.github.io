@@ -131,11 +131,41 @@ const SlideButton = styled(Button)`
   border: 2px solid white;
   color: white;
   backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 25;
+  touch-action: manipulation;
+  min-height: 44px;
+  min-width: 120px;
+  cursor: pointer;
 
   &:hover {
     background: white;
     color: ${colors.bitsquid.primary};
     transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  @media (max-width: 768px) {
+    min-height: 48px;
+    min-width: 140px;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-width: 2px;
+    z-index: 30;
+    
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      background: white;
+      color: ${colors.bitsquid.primary};
+      transform: scale(0.98);
+    }
   }
 `;
 
@@ -147,8 +177,9 @@ const CarouselControls = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
-  z-index: 3;
+  z-index: 5;
   transform: translateY(-50%);
+  pointer-events: none;
 
   @media (max-width: 768px) {
     top: auto;
@@ -174,6 +205,7 @@ const ControlButton = styled.button`
   font-size: 1.2rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  pointer-events: auto;
 
   &:hover {
     background: white;
@@ -206,7 +238,7 @@ const CarouselIndicators = styled.div`
   transform: translateX(-50%);
   display: flex;
   gap: 0.8rem;
-  z-index: 3;
+  z-index: 10;
 
   @media (max-width: 768px) {
     display: none;
@@ -279,6 +311,15 @@ const Carousel: React.FC<CarouselProps> = ({
     setCurrentIndex(index);
   };
 
+  // Handle button clicks with proper event handling for mobile and scroll to top
+  const handleButtonClick = (buttonAction: () => void, event: React.MouseEvent | React.TouchEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    buttonAction();
+    // Scroll to top when navigating to a new page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <CarouselContainer>
       <CarouselTrack currentIndex={currentIndex}>
@@ -288,7 +329,10 @@ const Carousel: React.FC<CarouselProps> = ({
               <SlideTitle isBanner={item.isBanner}>{item.title}</SlideTitle>
               {!item.isBanner && <SlideDescription>{item.description}</SlideDescription>}
               {!item.isBanner && (
-                <SlideButton onClick={item.buttonAction}>
+                <SlideButton 
+                  onClick={(e) => handleButtonClick(item.buttonAction, e)}
+                  onTouchEnd={(e) => handleButtonClick(item.buttonAction, e)}
+                >
                   {item.buttonText}
                 </SlideButton>
               )}
