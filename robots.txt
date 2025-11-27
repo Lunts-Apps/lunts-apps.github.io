@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://lunts-apps.github.io/sitemap.xml
+Sitemap: https://bit-squid.com/sitemap.xml
 
 # Disallow crawling of development files
 Disallow: /src/
