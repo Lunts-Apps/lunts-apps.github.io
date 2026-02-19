@@ -1,6 +1,40 @@
 User-agent: *
 Allow: /
 
+# Allow crawling of all pages
+Allow: /$
+Allow: /products
+Allow: /jobs
+Allow: /contact
+Allow: /lunts
+Allow: /lunts/privacy-policy
+Allow: /lunts/terms-conditions
+
+# Allow language variants
+Allow: /en
+Allow: /en/products
+Allow: /en/jobs
+Allow: /en/contact
+Allow: /en/products/lunts
+Allow: /en/products/lunts/privacy-policy
+Allow: /en/products/lunts/terms-and-conditions
+
+Allow: /es
+Allow: /es/productos
+Allow: /es/empleos
+Allow: /es/contacto
+Allow: /es/productos/lunts
+Allow: /es/productos/lunts/politica-de-privacidad
+Allow: /es/productos/lunts/terminos-y-condiciones
+
+Allow: /fr
+Allow: /fr/produits
+Allow: /fr/emplois
+Allow: /fr/contact
+Allow: /fr/produits/lunts
+Allow: /fr/produits/lunts/politique-de-confidentialite
+Allow: /fr/produits/lunts/conditions-dutilisation
+
 # Sitemap
 Sitemap: https://bit-squid.com/sitemap.xml
 
@@ -8,3 +42,20 @@ Sitemap: https://bit-squid.com/sitemap.xml
 Disallow: /src/
 Disallow: /*.json
 Disallow: /node_modules/
+
+# Disallow crawling of admin and system paths
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+# Disallow crawling of duplicate content
+Disallow: /*?*
+Disallow: /*&*
+
+# Allow crawling of important assets
+Allow: /assets/
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
