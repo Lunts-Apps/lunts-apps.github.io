@@ -40,7 +40,26 @@
             "description": "We prioritize user privacy and data security, implementing industry-leading practices to protect our users' information."
           }
         }
+      },
+      "highlights": {
+        "mobileApps": {
+          "title": "Mobile Applications",
+          "description": "We develop innovative apps that connect people and transform digital experiences."
+        },
+        "luntsDating": {
+          "title": "Lunts Dating",
+          "description": "Our star app for university dating with exclusive benefits for students."
+        },
+        "globalReach": {
+          "title": "Global Reach",
+          "description": "Creating solutions for users around the world with cutting-edge technology."
+        }
       }
+    },
+    "stats": {
+      "founded": "Founded",
+      "applications": "Applications",
+      "innovation": "Innovation"
     },
     "carousel": {
       "bitsquid": {

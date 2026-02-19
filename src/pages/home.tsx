@@ -481,39 +481,39 @@ const carouselItems = [
               <HighlightIcon>
                 <FontAwesomeIcon icon="mobile-alt" />
               </HighlightIcon>
-              <HighlightTitle>Aplicaciones Móviles</HighlightTitle>
-              <HighlightText>Desarrollamos apps innovadoras que conectan personas y transforman experiencias digitales</HighlightText>
+              <HighlightTitle>{t('home.sections.highlights.mobileApps.title')}</HighlightTitle>
+              <HighlightText>{t('home.sections.highlights.mobileApps.description')}</HighlightText>
             </HighlightCard>
             
             <HighlightCard onClick={() => handleNavigateWithScroll(`/${lang}/products/lunts`)}>
               <HighlightIcon>
                 <FontAwesomeIcon icon="heart" />
               </HighlightIcon>
-              <HighlightTitle>Lunts Dating</HighlightTitle>
-              <HighlightText>Nuestra app estrella para citas universitarias con beneficios exclusivos para estudiantes</HighlightText>
+              <HighlightTitle>{t('home.sections.highlights.luntsDating.title')}</HighlightTitle>
+              <HighlightText>{t('home.sections.highlights.luntsDating.description')}</HighlightText>
             </HighlightCard>
             
             <HighlightCard onClick={() => handleNavigateWithScroll(`/${lang}/products/lunts`)}>
               <HighlightIcon>
                 <FontAwesomeIcon icon="globe" />
               </HighlightIcon>
-              <HighlightTitle>Alcance Global</HighlightTitle>
-              <HighlightText>Creando soluciones para usuarios en todo el mundo con tecnología de vanguardia</HighlightText>
+              <HighlightTitle>{t('home.sections.highlights.globalReach.title')}</HighlightTitle>
+              <HighlightText>{t('home.sections.highlights.globalReach.description')}</HighlightText>
             </HighlightCard>
           </HeroHighlights>
 
           <HeroStats>
             <StatItem>
               <StatNumber>2023</StatNumber>
-              <StatLabel>Fundada</StatLabel>
+              <StatLabel>{t('home.stats.founded')}</StatLabel>
             </StatItem>
             <StatItem>
               <StatNumber>1+</StatNumber>
-              <StatLabel>Aplicaciones</StatLabel>
+              <StatLabel>{t('home.stats.applications')}</StatLabel>
             </StatItem>
             <StatItem>
               <StatNumber>100%</StatNumber>
-              <StatLabel>Innovación</StatLabel>
+              <StatLabel>{t('home.stats.innovation')}</StatLabel>
             </StatItem>
           </HeroStats>
 
