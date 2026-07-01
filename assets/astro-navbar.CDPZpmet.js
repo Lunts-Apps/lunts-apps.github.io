@@ -1,4 +1,4 @@
-import{r as e,t}from"./react.MgD3mx3I.js";import{i as n,o as r,t as i}from"./jsx-runtime.D0D0xG74.js";import{a,o,s}from"./global-styles.DQ2Tzk09.js";import{n as c,t as l}from"./free-brands-svg-icons.y1OFPFCd.js";var u=e(t(),1),d=i();n.add(c,l);var f=`/src/assets/bitsquid-logo.svg`,p=`/src/assets/lunts-logo.svg`,m=s.nav`
+import{r as e,t}from"./react.MgD3mx3I.js";import{i as n,o as r,t as i}from"./jsx-runtime.D0D0xG74.js";import{a,o,s}from"./global-styles.DQ2Tzk09.js";import{n as c,t as l}from"./free-brands-svg-icons.y1OFPFCd.js";var u=e(t(),1),d=i();n.add(c,l);var f=`/assets/bitsquid-logo.svg`,p=`/assets/lunts-logo.svg`,m=s.nav`
   position: fixed;
   top: 0;
   left: 0;
