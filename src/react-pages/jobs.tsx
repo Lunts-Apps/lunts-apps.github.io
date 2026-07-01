@@ -72,8 +72,8 @@ const MainIcon = styled.div`
 
 const FloatingIcon = styled.div<{ $delay: number; $top: string; $left: string }>`
   position: absolute;
-  top: ${props => props.top};
-  left: ${props => props.left};
+  top: ${props => props.$top};
+  left: ${props => props.$left};
   width: 40px;
   height: 40px;
   background: rgba(155, 93, 229, 0.2);
@@ -84,7 +84,7 @@ const FloatingIcon = styled.div<{ $delay: number; $top: string; $left: string }>
   color: ${colors.bitsquid.accent1};
   font-size: 1.2rem;
   animation: ${float} 4s ease-in-out infinite;
-  animation-delay: ${props => props.delay}s;
+  animation-delay: ${props => props.$delay}s;
   z-index: 1;
 
   @media (max-width: 768px) {
@@ -179,19 +179,19 @@ const Jobs: React.FC = () => {
             <FontAwesomeIcon icon="briefcase" />
           </MainIcon>
           
-          <FloatingIcon delay={0} top="10%" left="20%">
+          <FloatingIcon $delay={0} $top="10%" $left="20%">
             <FontAwesomeIcon icon="rocket" />
           </FloatingIcon>
           
-          <FloatingIcon delay={1} top="30%" left="80%">
+          <FloatingIcon $delay={1} $top="30%" $left="80%">
             <FontAwesomeIcon icon="lightbulb" />
           </FloatingIcon>
           
-          <FloatingIcon delay={2} top="70%" left="15%">
+          <FloatingIcon $delay={2} $top="70%" $left="15%">
             <FontAwesomeIcon icon="users" />
           </FloatingIcon>
           
-          <FloatingIcon delay={1.5} top="60%" left="85%">
+          <FloatingIcon $delay={1.5} $top="60%" $left="85%">
             <FontAwesomeIcon icon="code" />
           </FloatingIcon>
         </IconContainer>

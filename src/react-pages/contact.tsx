@@ -165,12 +165,12 @@ const TextArea = styled.textarea`
   }
 `;
 
-const SubmitButton = styled(Button)<{ isLoading?: boolean }>`
+const SubmitButton = styled(Button)<{ $isLoading?: boolean }>`
   width: 100%;
   margin-top: 1rem;
   position: relative;
   
-  ${props => props.isLoading && `
+  ${props => props.$isLoading && `
     opacity: 0.7;
     cursor: not-allowed;
   `}
@@ -341,7 +341,7 @@ const Contact: React.FC = () => {
             />
           </FormGroup>
 
-          <SubmitButton type="submit" isLoading={isLoading} disabled={isLoading}>
+          <SubmitButton type="submit" $isLoading={isLoading} disabled={isLoading}>
             {isLoading ? (
               <>
                 <FontAwesomeIcon icon="spinner" spin /> {t('contact.form.sending')}

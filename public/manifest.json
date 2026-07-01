@@ -23,7 +23,7 @@
       "type": "image/png"
     },
     {
-      "src": "/vite.svg",
+      "src": "/assets/bitsquid-favicon.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"

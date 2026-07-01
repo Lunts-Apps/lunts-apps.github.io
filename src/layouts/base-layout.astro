@@ -17,6 +17,7 @@ const langAttr = lang === 'en' ? 'en' : lang;
     <link rel="icon" type="image/svg+xml" href="/assets/bitsquid-favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
@@ -57,6 +58,9 @@ const langAttr = lang === 'en' ? 'en' : lang;
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonical} />
+
+    <!-- Permissions Policy -->
+    <meta http-equiv="Permissions-Policy" content="unload=(self)" />
     
     <!-- Alternate Language Versions -->
     <link rel="alternate" hreflang="en" href="https://bit-squid.com/en" />
