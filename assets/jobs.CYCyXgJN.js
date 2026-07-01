@@ -53,8 +53,8 @@ import{t as e}from"./react.MgD3mx3I.js";import{o as t,t as n}from"./jsx-runtime.
   }
 `,g=c.div`
   position: absolute;
-  top: ${e=>e.top};
-  left: ${e=>e.left};
+  top: ${e=>e.$top};
+  left: ${e=>e.$left};
   width: 40px;
   height: 40px;
   background: rgba(155, 93, 229, 0.2);
@@ -65,7 +65,7 @@ import{t as e}from"./react.MgD3mx3I.js";import{o as t,t as n}from"./jsx-runtime.
   color: ${r.bitsquid.accent1};
   font-size: 1.2rem;
   animation: ${f} 4s ease-in-out infinite;
-  animation-delay: ${e=>e.delay}s;
+  animation-delay: ${e=>e.$delay}s;
   z-index: 1;
 
   @media (max-width: 768px) {
@@ -137,4 +137,4 @@ import{t as e}from"./react.MgD3mx3I.js";import{o as t,t as n}from"./jsx-runtime.
       font-size: 1rem;
     }
   }
-`,S=()=>{let{t:e}=t();return(0,l.jsx)(u,{children:(0,l.jsxs)(d,{children:[(0,l.jsxs)(m,{children:[(0,l.jsx)(h,{children:(0,l.jsx)(s,{icon:`briefcase`})}),(0,l.jsx)(g,{delay:0,top:`10%`,left:`20%`,children:(0,l.jsx)(s,{icon:`rocket`})}),(0,l.jsx)(g,{delay:1,top:`30%`,left:`80%`,children:(0,l.jsx)(s,{icon:`lightbulb`})}),(0,l.jsx)(g,{delay:2,top:`70%`,left:`15%`,children:(0,l.jsx)(s,{icon:`users`})}),(0,l.jsx)(g,{delay:1.5,top:`60%`,left:`85%`,children:(0,l.jsx)(s,{icon:`code`})})]}),(0,l.jsx)(_,{children:e(`jobs.title`)}),(0,l.jsx)(v,{children:e(`jobs.noPositions`)}),(0,l.jsx)(y,{children:e(`jobs.description`)}),(0,l.jsxs)(b,{children:[`✨ `,e(`jobs.stayTuned`),` ✨`]}),(0,l.jsxs)(x,{children:[(0,l.jsx)(`h3`,{children:e(`jobs.getInTouch`)}),(0,l.jsxs)(`p`,{children:[(0,l.jsx)(s,{icon:`envelope`}),`bitsquidcorp@gmail.com`]}),(0,l.jsxs)(`p`,{children:[(0,l.jsx)(s,{icon:`building`}),`NIT: 901713594`]})]})]})})};export{S as default};
+`,S=()=>{let{t:e}=t();return(0,l.jsx)(u,{children:(0,l.jsxs)(d,{children:[(0,l.jsxs)(m,{children:[(0,l.jsx)(h,{children:(0,l.jsx)(s,{icon:`briefcase`})}),(0,l.jsx)(g,{$delay:0,$top:`10%`,$left:`20%`,children:(0,l.jsx)(s,{icon:`rocket`})}),(0,l.jsx)(g,{$delay:1,$top:`30%`,$left:`80%`,children:(0,l.jsx)(s,{icon:`lightbulb`})}),(0,l.jsx)(g,{$delay:2,$top:`70%`,$left:`15%`,children:(0,l.jsx)(s,{icon:`users`})}),(0,l.jsx)(g,{$delay:1.5,$top:`60%`,$left:`85%`,children:(0,l.jsx)(s,{icon:`code`})})]}),(0,l.jsx)(_,{children:e(`jobs.title`)}),(0,l.jsx)(v,{children:e(`jobs.noPositions`)}),(0,l.jsx)(y,{children:e(`jobs.description`)}),(0,l.jsxs)(b,{children:[`✨ `,e(`jobs.stayTuned`),` ✨`]}),(0,l.jsxs)(x,{children:[(0,l.jsx)(`h3`,{children:e(`jobs.getInTouch`)}),(0,l.jsxs)(`p`,{children:[(0,l.jsx)(s,{icon:`envelope`}),`bitsquidcorp@gmail.com`]}),(0,l.jsxs)(`p`,{children:[(0,l.jsx)(s,{icon:`building`}),`NIT: 901713594`]})]})]})})};export{S as default};
