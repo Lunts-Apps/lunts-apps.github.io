@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import { colors, Container } from '../../styles/global-styles';
+import '../../i18n';
+
+library.add(fas, fab);
 
 const FooterContainer = styled.footer<{ $isLunts?: boolean }>`
   background: ${props => props.$isLunts ? colors.lunts.primary : colors.bitsquid.primary};
@@ -158,7 +163,7 @@ const FooterLinks = styled.div`
   gap: 0.5rem;
 `;
 
-const FooterLink = styled(Link)<{ $isLunts?: boolean }>`
+const FooterLink = styled.a<{ $isLunts?: boolean }>`
   color: white;
   text-decoration: none;
   opacity: 0.8;
@@ -218,13 +223,16 @@ const FooterBottom = styled.div`
   z-index: 1;
 `;
 
-const Footer: React.FC = () => {
+interface AstroFooterProps {
+  lang: string;
+  currentPath: string;
+}
+
+const AstroFooter: React.FC<AstroFooterProps> = ({ lang, currentPath }) => {
   const { t } = useTranslation();
-  const location = useLocation();
-  const { lang } = useParams<{ lang: string }>();
 
   // Check if we're on a Lunts page
-  const isLuntsPage = location.pathname.includes('/products/lunts');
+  const isLuntsPage = currentPath.includes('/products/lunts');
 
   // Function to scroll to top when clicking footer links
   const handleLinkClick = () => {
@@ -284,13 +292,13 @@ const Footer: React.FC = () => {
         <FooterSection>
           <h3>{t('footer.products')}</h3>
           <FooterLinks>
-            <FooterLink to={`/${lang}/products/lunts`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
+            <FooterLink href={`/${lang}/products/lunts`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
               Lunts - {t('products.lunts.subtitle')}
             </FooterLink>
-            <FooterLink to={`/${lang}/products/lunts/privacy-policy`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
+            <FooterLink href={`/${lang}/products/lunts/privacy-policy`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
               {t('products.lunts.privacyPolicy')}
             </FooterLink>
-            <FooterLink to={`/${lang}/products/lunts/terms-and-conditions`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
+            <FooterLink href={`/${lang}/products/lunts/terms-and-conditions`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
               {t('products.lunts.termsConditions')}
             </FooterLink>
           </FooterLinks>
@@ -315,10 +323,10 @@ const Footer: React.FC = () => {
         <FooterSection>
           <h3>{t('footer.legal')}</h3>
           <FooterLinks>
-            <FooterLink to={`/${lang}/products/lunts/privacy-policy`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
+            <FooterLink href={`/${lang}/products/lunts/privacy-policy`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
               {t('legal.privacyPolicy.title')}
             </FooterLink>
-            <FooterLink to={`/${lang}/products/lunts/terms-and-conditions`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
+            <FooterLink href={`/${lang}/products/lunts/terms-and-conditions`} $isLunts={isLuntsPage} onClick={handleLinkClick}>
               {t('legal.termsConditions.title')}
             </FooterLink>
           </FooterLinks>
@@ -336,4 +344,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default AstroFooter;

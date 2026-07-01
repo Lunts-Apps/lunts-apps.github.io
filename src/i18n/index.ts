@@ -13,6 +13,8 @@ const resources = {
   fr: { translation: fr },
 };
 
+const isServer = typeof window === 'undefined';
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -22,13 +24,16 @@ i18n
     debug: false,
     
     detection: {
-      order: ['path', 'localStorage', 'navigator'],
+      order: isServer ? ['html'] : ['path', 'localStorage', 'navigator', 'html'],
       caches: ['localStorage'],
     },
 
     interpolation: {
       escapeValue: false,
     },
+    
+    // Don't fail on missing keys during SSR
+    missingKeyHandler: false,
   });
 
 export default i18n;

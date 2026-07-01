@@ -1,0 +1,32 @@
+{
+  "name": "Bitsquid - Lunts | College Dating App & Citas Universitarias",
+  "short_name": "Bitsquid",
+  "description": "Bitsquid creates innovative mobile applications for users worldwide. Discover Lunts, our college dating app with exclusive benefits for students.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0C10",
+  "theme_color": "#9B5DE5",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/vite.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../../../layouts/base-layout.astro';
+import I18nWrapper from '../../../../components/layout/astro-i18n-wrapper';
+import AstroNavbar from '../../../../components/layout/astro-navbar';
+import AstroFooter from '../../../../components/layout/astro-footer';
+import LuntsTermsConditions from '../../../../react-pages/lunts/terms-conditions.tsx';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentPath = `/${lang}/products/lunts/terms-and-conditions`;
+const titles: Record<string, string> = {
+  en: 'Terms and Conditions - Lunts by Bitsquid',
+  es: 'Términos y Condiciones - Lunts by Bitsquid',
+  fr: 'Conditions Générales - Lunts by Bitsquid',
+};
+const descriptions: Record<string, string> = {
+  en: 'Terms and Conditions for Lunts college dating app by Bitsquid.',
+  es: 'Términos y Condiciones para Lunts app de citas universitarias by Bitsquid.',
+  fr: 'Conditions Générales pour Lunts application de rencontres universitaires by Bitsquid.',
+};
+---
+
+<BaseLayout 
+  title={titles[lang!] || titles['en']}
+  description={descriptions[lang!] || descriptions['en']}
+  lang={lang!}
+  canonical={`https://bit-squid.com/${lang}/products/lunts/terms-and-conditions`}
+>
+  <I18nWrapper lang={lang!} client:only="react" />
+  <AstroNavbar lang={lang!} currentPath={currentPath} client:only="react" />
+  <main>
+    <LuntsTermsConditions lang={lang!} client:only="react" />
+  </main>
+  <AstroFooter lang={lang!} currentPath={currentPath} client:only="react" />
+</BaseLayout>

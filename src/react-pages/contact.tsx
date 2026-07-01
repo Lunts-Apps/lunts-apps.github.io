@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../i18n';
 import { colors, ContainerLimited, Button } from '../styles/global-styles';
 
 const ContactContainer = styled.div`

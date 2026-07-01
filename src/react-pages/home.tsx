@@ -1,9 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, Container, Button, SectionTitle } from '../styles/global-styles';
+import '../i18n';
+import '../i18n';
 import Carousel from '../components/ui/carousel';
 
 const HomeContainer = styled.div`
@@ -421,18 +422,20 @@ const FeatureDescription = styled.p`
   line-height: 1.6;
 `;
 
-const Home: React.FC = () => {
+interface HomeProps {
+  lang: string;
+}
+
+const Home: React.FC<HomeProps> = ({ lang }) => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
-  const navigate = useNavigate();
 
   // Function to handle navigation with scroll to top
   const handleNavigateWithScroll = (path: string) => {
-    navigate(path);
+    window.location.href = path;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-const carouselItems = [
+  const carouselItems = [
     {
       id: 1,
       title: '',

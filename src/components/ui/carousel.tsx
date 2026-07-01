@@ -29,16 +29,16 @@ const CarouselContainer = styled.div`
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 `;
 
-const CarouselTrack = styled.div<{ currentIndex: number }>`
+const CarouselTrack = styled.div<{ $currentIndex: number }>`
   display: flex;
   transition: transform 0.5s ease-in-out;
-  transform: translateX(-${props => props.currentIndex * 100}%);
+  transform: translateX(-${props => props.$currentIndex * 100}%);
 `;
 
-const CarouselSlide = styled.div<{ background: string; isBanner?: boolean }>`
+const CarouselSlide = styled.div<{ $background: string; $isBanner?: boolean }>`
   min-width: 100%;
   height: 400px;
-  background: ${props => props.background};
+  background: ${props => props.$background};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,7 +56,7 @@ const CarouselSlide = styled.div<{ background: string; isBanner?: boolean }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: ${props => props.isBanner ? 'transparent' : 'rgba(0, 0, 0, 0.2)'};
+    background: ${props => props.$isBanner ? 'transparent' : 'rgba(0, 0, 0, 0.2)'};
     z-index: 1;
   }
 
@@ -64,7 +64,7 @@ const CarouselSlide = styled.div<{ background: string; isBanner?: boolean }>`
     height: 250px;
     padding: 1rem;
 
-    ${props => props.isBanner && `
+    ${props => props.$isBanner && `
       background-size: contain;
       background-position: center;
       background-color: #000;
@@ -80,13 +80,13 @@ const SlideContent = styled.div`
   max-width: 600px;
 `;
 
-const SlideTitle = styled.h2<{ isBanner?: boolean }>`
+const SlideTitle = styled.h2<{ $isBanner?: boolean }>`
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
-  ${props => props.isBanner && `
+  ${props => props.$isBanner && `
     font-size: 4rem;
     font-weight: 300;
     letter-spacing: 0.2em;
@@ -109,7 +109,7 @@ const SlideTitle = styled.h2<{ isBanner?: boolean }>`
   `}
 
   @media (max-width: 768px) {
-    font-size: ${props => props.isBanner ? '3rem' : '2rem'};
+    font-size: ${props => props.$isBanner ? '3rem' : '2rem'};
     margin-bottom: 1rem;
   }
 `;
@@ -245,12 +245,12 @@ const CarouselIndicators = styled.div`
   }
 `;
 
-const Indicator = styled.button<{ isActive: boolean }>`
-  width: ${props => props.isActive ? '24px' : '8px'};
+const Indicator = styled.button<{ $isActive: boolean }>`
+  width: ${props => props.$isActive ? '24px' : '8px'};
   height: 8px;
   border-radius: 4px;
   border: none;
-  background: ${props => props.isActive ? 'white' : 'rgba(255, 255, 255, 0.4)'};
+  background: ${props => props.$isActive ? 'white' : 'rgba(255, 255, 255, 0.4)'};
   cursor: pointer;
   transition: all 0.4s ease;
   position: relative;
@@ -277,7 +277,7 @@ const Indicator = styled.button<{ isActive: boolean }>`
     }
   }
 
-  ${props => props.isActive && `
+  ${props => props.$isActive && `
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
   `}
 `;
@@ -322,11 +322,11 @@ const Carousel: React.FC<CarouselProps> = ({
 
   return (
     <CarouselContainer>
-      <CarouselTrack currentIndex={currentIndex}>
+      <CarouselTrack $currentIndex={currentIndex}>
         {items.map((item) => (
-          <CarouselSlide key={item.id} background={item.background} isBanner={item.isBanner}>
+          <CarouselSlide key={item.id} $background={item.background} $isBanner={item.isBanner}>
             <SlideContent>
-              <SlideTitle isBanner={item.isBanner}>{item.title}</SlideTitle>
+              <SlideTitle $isBanner={item.isBanner}>{item.title}</SlideTitle>
               {!item.isBanner && <SlideDescription>{item.description}</SlideDescription>}
               {!item.isBanner && (
                 <SlideButton 
@@ -354,7 +354,7 @@ const Carousel: React.FC<CarouselProps> = ({
         {items.map((_, index) => (
           <Indicator
             key={index}
-            isActive={index === currentIndex}
+            $isActive={index === currentIndex}
             onClick={() => goToSlide(index)}
           />
         ))}

@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/base-layout.astro';
+import I18nWrapper from '../../components/layout/astro-i18n-wrapper';
+import AstroNavbar from '../../components/layout/astro-navbar';
+import AstroFooter from '../../components/layout/astro-footer';
+import Jobs from '../../react-pages/jobs.tsx';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentPath = `/${lang}/jobs`;
+const titles: Record<string, string> = {
+  en: 'Jobs - Bitsquid | Career Opportunities',
+  es: 'Trabajos - Bitsquid | Oportunidades Laborales',
+  fr: 'Emplois - Bitsquid | Opportunités de Carrière',
+};
+const descriptions: Record<string, string> = {
+  en: 'Join Bitsquid team. Explore career opportunities at Bitsquid, creators of Lunts college dating app.',
+  es: 'Únete al equipo de Bitsquid. Explora oportunidades laborales en Bitsquid, creadores de Lunts app de citas universitarias.',
+  fr: 'Rejoignez léquipe Bitsquid. Découvrez les opportunités de carrière chez Bitsquid.',
+};
+---
+
+<BaseLayout 
+  title={titles[lang!] || titles['en']}
+  description={descriptions[lang!] || descriptions['en']}
+  lang={lang!}
+  canonical={`https://bit-squid.com/${lang}/jobs`}
+>
+  <I18nWrapper lang={lang!} client:only="react" />
+  <AstroNavbar lang={lang!} currentPath={currentPath} client:only="react" />
+  <main>
+    <Jobs client:only="react" />
+  </main>
+  <AstroFooter lang={lang!} currentPath={currentPath} client:only="react" />
+</BaseLayout>

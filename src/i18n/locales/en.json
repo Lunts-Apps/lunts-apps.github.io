@@ -230,8 +230,21 @@
           ]
         },
         "contact": {
-          "title": "9. Contact:",
+          "title": "10. Contact:",
           "content": "If you have any questions, concerns, or comments about this Privacy Policy or our privacy practices in general, feel free to contact us at lunts.info@gmail.com."
+        },
+        "dataDeletion": {
+          "title": "9. Data Deletion Requests:",
+          "intro": "Users have the right to request the deletion of their account and personal data collected by Lunts.",
+          "requestInfo": "To request the deletion of your account and associated personal information, please contact us at lunts.info@gmail.com with the subject line \"Data Deletion Request\".",
+          "identifyInfo": "Please include sufficient information to identify your account, such as your registered email address, phone number, or any other information associated with your account.",
+          "listIntro": "Upon receiving and verifying a valid request, we will:",
+          "items": [
+            "Delete your account and personal information from our active systems.",
+            "Remove profile information, uploaded photos, preferences, and other associated account data.",
+            "Complete the deletion process within 30 days of verifying the request."
+          ],
+          "retention": "Certain information may be retained when required by law, for fraud prevention, security purposes, or compliance with legal obligations."
         }
       },
       "agreement": "By using Lunts, you agree to the terms and conditions set forth in this Privacy Policy. We recommend that you review this policy periodically to stay informed about how we protect your information.",

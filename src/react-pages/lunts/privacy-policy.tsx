@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, Container } from '../../styles/global-styles';
+import '../../i18n';
 
 const PrivacyContainer = styled.div`
   min-height: 100vh;
@@ -42,7 +42,7 @@ const ContentContainer = styled(Container)`
   max-width: 800px;
 `;
 
-const BackLink = styled(Link)`
+const BackLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -100,9 +100,12 @@ const ContactInfo = styled.div`
   }
 `;
 
-const LuntsPrivacyPolicy: React.FC = () => {
+interface LuntsPrivacyPolicyProps {
+  lang: string;
+}
+
+const LuntsPrivacyPolicy: React.FC<LuntsPrivacyPolicyProps> = ({ lang }) => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
 
   return (
     <PrivacyContainer>
@@ -115,7 +118,7 @@ const LuntsPrivacyPolicy: React.FC = () => {
 
       <ContentSection>
         <ContentContainer>
-          <BackLink to={`/${lang}/products/lunts`}>
+          <BackLink href={`/${lang}/products/lunts`}>
             <FontAwesomeIcon icon="arrow-left" />
             Back to Lunts
           </BackLink>
@@ -198,6 +201,30 @@ const LuntsPrivacyPolicy: React.FC = () => {
                 <li key={index} style={{ marginBottom: '0.5rem' }}>{item}</li>
               ))}
             </ul>
+          </Section>
+
+          <Section>
+            <SectionTitle>{t('legal.privacyPolicy.sections.dataDeletion.title')}</SectionTitle>
+            <SectionContent>
+              {t('legal.privacyPolicy.sections.dataDeletion.intro')}
+            </SectionContent>
+            <SectionContent>
+              {t('legal.privacyPolicy.sections.dataDeletion.requestInfo')}
+            </SectionContent>
+            <SectionContent>
+              {t('legal.privacyPolicy.sections.dataDeletion.identifyInfo')}
+            </SectionContent>
+            <SectionContent>
+              {t('legal.privacyPolicy.sections.dataDeletion.listIntro')}
+            </SectionContent>
+            <ul style={{ marginLeft: '2rem', marginBottom: '1.5rem' }}>
+              {(t('legal.privacyPolicy.sections.dataDeletion.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                <li key={index} style={{ marginBottom: '0.5rem' }}>{item}</li>
+              ))}
+            </ul>
+            <SectionContent>
+              {t('legal.privacyPolicy.sections.dataDeletion.retention')}
+            </SectionContent>
           </Section>
 
           <Section>

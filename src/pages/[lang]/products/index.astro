@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../../layouts/base-layout.astro';
+import I18nWrapper from '../../../components/layout/astro-i18n-wrapper';
+import AstroNavbar from '../../../components/layout/astro-navbar';
+import AstroFooter from '../../../components/layout/astro-footer';
+import Products from '../../../react-pages/products.tsx';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentPath = `/${lang}/products`;
+const titles: Record<string, string> = {
+  en: 'Products - Bitsquid | Lunts College Dating App',
+  es: 'Productos - Bitsquid | Lunts App de Citas Universitarias',
+  fr: 'Produits - Bitsquid | Lunts Application de Rencontres',
+};
+const descriptions: Record<string, string> = {
+  en: 'Explore Bitsquid products. Lunts es la app de citas universitarias #1. Conoce estudiantes, match universitario y conexiones auténticas.',
+  es: 'Explora los productos de Bitsquid. Lunts es la #1 app de citas universitarias. Conoce estudiantes, match universitario y conexiones auténticas.',
+  fr: 'Découvrez les produits Bitsquid. Lunts est lapplication #1 de rencontres universitaires.',
+};
+---
+
+<BaseLayout 
+  title={titles[lang!] || titles['en']}
+  description={descriptions[lang!] || descriptions['en']}
+  lang={lang!}
+  canonical={`https://bit-squid.com/${lang}/products`}
+>
+  <I18nWrapper lang={lang!} client:only="react" />
+  <AstroNavbar lang={lang!} currentPath={currentPath} client:only="react" />
+  <main>
+    <Products lang={lang!} client:only="react" />
+  </main>
+  <AstroFooter lang={lang!} currentPath={currentPath} client:only="react" />
+</BaseLayout>

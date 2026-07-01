@@ -230,8 +230,21 @@
           ]
         },
         "contact": {
-          "title": "9. Contact :",
+          "title": "10. Contact :",
           "content": "Si vous avez des questions, préoccupations ou commentaires concernant cette Politique de Confidentialité ou nos pratiques en matière de confidentialité en général, n'hésitez pas à nous contacter à lunts.info@gmail.com."
+        },
+        "dataDeletion": {
+          "title": "9. Demandes de Suppression de Données :",
+          "intro": "Les utilisateurs ont le droit de demander la suppression de leur compte et des données personnelles collectées par Lunts.",
+          "requestInfo": "Pour demander la suppression de votre compte et de vos informations personnelles associées, veuillez nous contacter à lunts.info@gmail.com avec l'objet \"Demande de Suppression de Données\".",
+          "identifyInfo": "Veuillez inclure suffisamment d'informations pour identifier votre compte, telles que votre adresse e-mail enregistrée, votre numéro de téléphone ou toute autre information associée à votre compte.",
+          "listIntro": "Après réception et vérification d'une demande valide, nous :",
+          "items": [
+            "Supprimerons votre compte et vos informations personnelles de nos systèmes actifs.",
+            "Supprimerons les informations de profil, les photos téléchargées, les préférences et autres données associées au compte.",
+            "Effectuerons le processus de suppression dans les 30 jours suivant la vérification de la demande."
+          ],
+          "retention": "Certaines informations peuvent être conservées lorsque requis par la loi, pour la prévention de la fraude, à des fins de sécurité ou pour le respect d'obligations légales."
         }
       },
       "agreement": "En utilisant Lunts, vous acceptez les termes et conditions énoncés dans cette Politique de confidentialité. Nous vous recommandons de consulter périodiquement cette politique pour rester informé sur la manière dont nous protégeons vos informations.",

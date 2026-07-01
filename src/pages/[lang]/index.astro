@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/base-layout.astro';
+import I18nWrapper from '../../components/layout/astro-i18n-wrapper';
+import AstroNavbar from '../../components/layout/astro-navbar';
+import AstroFooter from '../../components/layout/astro-footer';
+import Home from '../../react-pages/home.tsx';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentPath = `/${lang}`;
+const titles: Record<string, string> = {
+  en: 'Bitsquid - Lunts | College Dating App & Citas Universitarias',
+  es: 'Bitsquid - Lunts | College Dating App & Citas Universitarias',
+  fr: 'Bitsquid - Lunts | Application de Rencontres Universitaires',
+};
+const descriptions: Record<string, string> = {
+  en: 'Bitsquid presenta Lunts, la app líder en college dating y citas universitarias. Conecta con estudiantes, chat universitario, blind dates y conexiones genuinas.',
+  es: 'Bitsquid presenta Lunts, la app líder en citas universitarias. Conecta con estudiantes, chat universitario, citas a ciegas y conexiones genuinas.',
+  fr: 'Bitsquid présente Lunts, lapplication leader pour les rencontres universitaires. Connectez-vous avec des étudiants, chat universitaire, blind dates et connexions authentiques.',
+};
+---
+
+<BaseLayout 
+  title={titles[lang!] || titles['en']}
+  description={descriptions[lang!] || descriptions['en']}
+  lang={lang!}
+  canonical={`https://bit-squid.com/${lang}`}
+>
+  <I18nWrapper lang={lang!} client:only="react" />
+  <AstroNavbar lang={lang!} currentPath={currentPath} client:only="react" />
+  <main>
+    <Home lang={lang!} client:only="react" />
+  </main>
+  <AstroFooter lang={lang!} currentPath={currentPath} client:only="react" />
+</BaseLayout>

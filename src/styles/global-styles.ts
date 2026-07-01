@@ -56,13 +56,22 @@ export const GlobalStyle = createGlobalStyle`
     font-family: inherit;
   }
 
-  ul, ol {
+  ul {
     list-style: none; 
+    padding-left: 1.5rem;
   }
 
-  ul li::marker {
-    content: "♦ ";       
+  ol {
+    list-style: none;
+  }
+
+  ul li::before {
+    content: "♦";
     color: #489B7D;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;
+    margin-left: -1.2em;
   }
 
   img {

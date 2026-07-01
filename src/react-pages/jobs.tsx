@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, Container, SectionTitle } from '../styles/global-styles';
+import '../i18n';
 
 const JobsContainer = styled.div`
   min-height: 100vh;
@@ -69,7 +70,7 @@ const MainIcon = styled.div`
   }
 `;
 
-const FloatingIcon = styled.div<{ delay: number; top: string; left: string }>`
+const FloatingIcon = styled.div<{ $delay: number; $top: string; $left: string }>`
   position: absolute;
   top: ${props => props.top};
   left: ${props => props.left};

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, ContainerLimited } from '../../styles/global-styles';
+import '../../i18n';
 
 const TermsContainer = styled.div`
   min-height: 100vh;
@@ -42,7 +42,7 @@ const ContentContainer = styled(ContainerLimited)`
   max-width: 800px;
 `;
 
-const BackLink = styled(Link)`
+const BackLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -100,9 +100,12 @@ const ContactInfo = styled.div`
   }
 `;
 
-const LuntsTermsConditions: React.FC = () => {
+interface LuntsTermsConditionsProps {
+  lang: string;
+}
+
+const LuntsTermsConditions: React.FC<LuntsTermsConditionsProps> = ({ lang }) => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
 
   return (
     <TermsContainer>
@@ -115,7 +118,7 @@ const LuntsTermsConditions: React.FC = () => {
 
       <ContentSection>
         <ContentContainer>
-          <BackLink to={`/${lang}/products/lunts`}>
+          <BackLink href={`/${lang}/products/lunts`}>
             <FontAwesomeIcon icon="arrow-left" />
             Back to Lunts
           </BackLink>

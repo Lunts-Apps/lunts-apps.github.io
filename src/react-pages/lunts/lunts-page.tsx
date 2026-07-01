@@ -1,10 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, Container } from '../../styles/global-styles';
-import luntsIsoLogo from '../../assets/lunts-iso-logo.svg';
+import '../../i18n';
+
+interface LuntsPageProps {
+  lang: string;
+}
 
 const LuntsContainer = styled.div`
   min-height: 100vh;
@@ -320,7 +323,7 @@ const LegalLinks = styled.div`
   flex-wrap: wrap;
 `;
 
-const LegalLink = styled(Link)`
+const LegalLink = styled.a`
   color: ${colors.lunts.primary};
   text-decoration: none;
   font-weight: 500;
@@ -335,9 +338,8 @@ const LegalLink = styled(Link)`
   }
 `;
 
-const LuntsPage: React.FC = () => {
+const LuntsPage: React.FC<LuntsPageProps> = ({ lang }) => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
 
   const getVideoEmbedUrl = () => {
     switch (lang) {
@@ -360,7 +362,7 @@ const LuntsPage: React.FC = () => {
       <HeroSection>
         <HeroContent>
           <LuntsLogo>
-            <img src={luntsIsoLogo} alt="Lunts" />
+            <img src="/assets/lunts-iso-logo.svg" alt="Lunts" />
           </LuntsLogo>
           
           <HeroTitle>{t('products.lunts.title')}</HeroTitle>
@@ -513,10 +515,10 @@ const LuntsPage: React.FC = () => {
             {t('products.lunts.legalSection.title')}
           </h3>
           <LegalLinks>
-            <LegalLink to={`/${lang}/products/lunts/privacy-policy`} onClick={handleLegalLinkClick}>
+            <LegalLink href={`/${lang}/products/lunts/privacy-policy`} onClick={handleLegalLinkClick}>
               {t('products.lunts.privacyPolicy')}
             </LegalLink>
-            <LegalLink to={`/${lang}/products/lunts/terms-and-conditions`} onClick={handleLegalLinkClick}>
+            <LegalLink href={`/${lang}/products/lunts/terms-and-conditions`} onClick={handleLegalLinkClick}>
               {t('products.lunts.termsConditions')}
             </LegalLink>
           </LegalLinks>

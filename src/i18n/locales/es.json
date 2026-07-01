@@ -230,8 +230,21 @@
           ]
         },
         "contact": {
-          "title": "9. Contacto:",
+          "title": "10. Contacto:",
           "content": "Si tienes alguna pregunta, inquietud o comentario sobre esta Política de Privacidad o nuestras prácticas de privacidad en general, no dudes en contactarnos en lunts.info@gmail.com."
+        },
+        "dataDeletion": {
+          "title": "9. Solicitudes de Eliminación de Datos:",
+          "intro": "Los usuarios tienen derecho a solicitar la eliminación de su cuenta y los datos personales recopilados por Lunts.",
+          "requestInfo": "Para solicitar la eliminación de tu cuenta y la información personal asociada, contáctanos en lunts.info@gmail.com con el asunto \"Solicitud de Eliminación de Datos\".",
+          "identifyInfo": "Por favor, incluye información suficiente para identificar tu cuenta, como tu dirección de correo electrónico registrada, número de teléfono o cualquier otra información asociada con tu cuenta.",
+          "listIntro": "Al recibir y verificar una solicitud válida, nosotros:",
+          "items": [
+            "Eliminaremos tu cuenta e información personal de nuestros sistemas activos.",
+            "Eliminaremos la información del perfil, fotos subidas, preferencias y otros datos asociados a la cuenta.",
+            "Completaremos el proceso de eliminación dentro de los 30 días posteriores a la verificación de la solicitud."
+          ],
+          "retention": "Cierta información puede conservarse cuando sea requerido por ley, para prevención de fraude, fines de seguridad o cumplimiento de obligaciones legales."
         }
       },
       "agreement": "Al utilizar Lunts, aceptas los términos y condiciones establecidos en esta Política de Privacidad. Recomendamos que revises esta política periódicamente para mantenerte informado sobre cómo protegemos tu información.",

@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/base-layout.astro';
+import I18nWrapper from '../../components/layout/astro-i18n-wrapper';
+import AstroNavbar from '../../components/layout/astro-navbar';
+import AstroFooter from '../../components/layout/astro-footer';
+import Contact from '../../react-pages/contact.tsx';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentPath = `/${lang}/contact`;
+const titles: Record<string, string> = {
+  en: 'Contact - Bitsquid | Get in Touch',
+  es: 'Contacto - Bitsquid | Ponte en Contacto',
+  fr: 'Contact - Bitsquid | Entrez en Contact',
+};
+const descriptions: Record<string, string> = {
+  en: 'Contact Bitsquid team. Get in touch with the creators of Lunts college dating app.',
+  es: 'Contacta al equipo de Bitsquid. Ponte en contacto con los creadores de Lunts app de citas universitarias.',
+  fr: 'Contactez léquipe Bitsquid. Entrez en contact avec les créateurs de Lunts.',
+};
+---
+
+<BaseLayout 
+  title={titles[lang!] || titles['en']}
+  description={descriptions[lang!] || descriptions['en']}
+  lang={lang!}
+  canonical={`https://bit-squid.com/${lang}/contact`}
+>
+  <I18nWrapper lang={lang!} client:only="react" />
+  <AstroNavbar lang={lang!} currentPath={currentPath} client:only="react" />
+  <main>
+    <Contact client:only="react" />
+  </main>
+  <AstroFooter lang={lang!} currentPath={currentPath} client:only="react" />
+</BaseLayout>

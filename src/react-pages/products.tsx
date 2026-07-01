@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../i18n';
 import { colors, Container, Button } from '../styles/global-styles';
 
 const ProductsContainer = styled.div`
@@ -268,9 +268,12 @@ const VideoContainer = styled.div`
   }
 `;
 
-const Products: React.FC = () => {
+interface ProductsProps {
+  lang: string;
+}
+
+const Products: React.FC<ProductsProps> = ({ lang }) => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
 
   const getVideoEmbedUrl = () => {
     switch (lang) {

@@ -1,5 +1,17 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  lang: string;
+  canonical: string;
+  ogImage?: string;
+}
+const { title, description, lang, canonical, ogImage } = Astro.props;
+const langAttr = lang === 'en' ? 'en' : lang;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang={langAttr}>
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/assets/bitsquid-favicon.svg" />
@@ -9,31 +21,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Primary Meta Tags -->
-    <title>Bitsquid - Lunts | College Dating App & Citas Universitarias</title>
-    <meta name="title" content="Bitsquid - Lunts | College Dating App & Citas Universitarias" />
-    <meta name="description" content="Bitsquid presenta Lunts, la app líder en college dating y citas universitarias. Conecta con estudiantes, chat universitario, blind dates y conexiones genuinas." />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
     <meta name="keywords" content="Bitsquid, Lunts, College Dating, Citas Universitarias, Chat Universitario, Blind Dates, Citas a Ciegas, Conexiones Genuinas, Mobile App, Dating App, University Dating, Estudiantes, App de Citas" />
     <meta name="author" content="Bitsquid Corp" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
+    <meta name="language" content={lang === 'en' ? 'English' : lang === 'es' ? 'Spanish' : 'French'} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bit-squid.com/" />
-    <meta property="og:title" content="Bitsquid - Lunts | College Dating App" />
-    <meta property="og:description" content="App líder en citas universitarias y conexiones genuinas para estudiantes. Descubre Lunts by Bitsquid." />
-    <meta property="og:image" content="https://bit-squid.com/assets/bitsquid-banner.png" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage || 'https://bit-squid.com/assets/bitsquid-banner.png'} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Bitsquid" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : lang === 'es' ? 'es_ES' : 'fr_FR'} />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://bit-squid.com/" />
-    <meta property="twitter:title" content="Bitsquid - Lunts | College Dating App" />
-    <meta property="twitter:description" content="App líder en citas universitarias y conexiones genuinas para estudiantes." />
-    <meta property="twitter:image" content="https://bit-squid.com/assets/bitsquid-banner.png" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage || 'https://bit-squid.com/assets/bitsquid-banner.png'} />
     <meta property="twitter:creator" content="@bitsquidcorp" />
     <meta property="twitter:site" content="@bitsquidcorp" />
     
@@ -44,7 +56,7 @@
     <meta name="format-detection" content="telephone=no" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://bit-squid.com/" />
+    <link rel="canonical" href={canonical} />
     
     <!-- Alternate Language Versions -->
     <link rel="alternate" hreflang="en" href="https://bit-squid.com/en" />
@@ -60,7 +72,7 @@
       "name": "Bitsquid Corp",
       "alternateName": "Bitsquid",
       "url": "https://bit-squid.com/",
-      "logo": "https://bit-squid.com/assets/bitsquid-logo.svg",
+      "logo": "https://bit-squid.com/assets/bitsquid-favicon.svg",
       "description": "Bitsquid creates innovative mobile applications for users worldwide. Our goal is to develop unique digital experiences that connect, inspire, and provide real value.",
       "foundingDate": "2023",
       "founders": [
@@ -94,9 +106,87 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style is:global>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        font-family: 'League Spartan', sans-serif;
+        background-color: #0B0C10;
+        color: #F9F9F9;
+        line-height: 1.6;
+        overflow-x: hidden;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #root {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .App {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 1.5rem;
+      }
+
+      ol {
+        list-style: none;
+      }
+
+      ul li::before {
+        content: "♦";
+        color: #489B7D;
+        font-weight: bold;
+        display: inline-block;
+        width: 1.2em;
+        margin-left: -1.2em;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <slot />
   </body>
 </html>
