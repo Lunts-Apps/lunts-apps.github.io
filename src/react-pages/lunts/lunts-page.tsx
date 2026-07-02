@@ -449,7 +449,7 @@ const LuntsPage: React.FC<LuntsPageProps> = ({ lang }) => {
 
             <FeatureCard>
               <FeatureIcon>
-                <FontAwesomeIcon icon="shield-alt" />
+                <FontAwesomeIcon icon="shield-halved" />
               </FeatureIcon>
               <FeatureTitle>{t('products.lunts.features.safety.title')}</FeatureTitle>
               <FeatureDescription>

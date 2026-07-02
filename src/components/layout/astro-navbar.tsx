@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import { colors } from '../../styles/global-styles';
 import '../../i18n';
 
-library.add(fas, fab);
+import '../../utils/fontawesome-icons';
+
 
 
 const bitsquidLogo = '/assets/bitsquid-logo.svg';
@@ -692,3 +690,4 @@ const AstroNavbar: React.FC<AstroNavbarProps> = ({ lang, currentPath }) => {
 };
 
 export default AstroNavbar;
+

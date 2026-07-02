@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+import '../utils/fontawesome-icons';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -365,3 +367,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+

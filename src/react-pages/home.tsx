@@ -1,4 +1,6 @@
 import React from 'react';
+
+import '../utils/fontawesome-icons';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -482,7 +484,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           <HeroHighlights>
             <HighlightCard onClick={() => handleNavigateWithScroll(`/${lang}/products/lunts`)}>
               <HighlightIcon>
-                <FontAwesomeIcon icon="mobile-alt" />
+                <FontAwesomeIcon icon="mobile-screen" />
               </HighlightIcon>
               <HighlightTitle>{t('home.sections.highlights.mobileApps.title')}</HighlightTitle>
               <HighlightText>{t('home.sections.highlights.mobileApps.description')}</HighlightText>
@@ -571,7 +573,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
             
             <FeatureCard>
               <FeatureIcon>
-                <FontAwesomeIcon icon="shield-alt" />
+                <FontAwesomeIcon icon="shield-halved" />
               </FeatureIcon>
               <FeatureTitle>{t('home.sections.whyChoose.features.security.title')}</FeatureTitle>
               <FeatureDescription>
@@ -586,3 +588,4 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
 };
 
 export default Home;
+

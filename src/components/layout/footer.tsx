@@ -1,4 +1,6 @@
 import React from 'react';
+
+import '../../utils/fontawesome-icons';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';

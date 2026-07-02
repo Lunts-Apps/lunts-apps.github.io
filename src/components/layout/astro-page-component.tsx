@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from 'react-i18next';
 import '../../i18n';
 import AstroNavbar from './astro-navbar';
 import AstroFooter from './astro-footer';
 
-library.add(fas, fab);
+import '../../utils/fontawesome-icons';
+
 
 interface AstroPageComponentProps {
   lang: string;
@@ -75,3 +73,4 @@ const AstroPageComponent: React.FC<AstroPageComponentProps> = ({ lang, currentPa
 };
 
 export default AstroPageComponent;
+

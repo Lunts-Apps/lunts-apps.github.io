@@ -1,4 +1,6 @@
 import React from 'react';
+
+import '../utils/fontawesome-icons';
 import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -225,3 +227,4 @@ const Jobs: React.FC = () => {
 };
 
 export default Jobs;
+

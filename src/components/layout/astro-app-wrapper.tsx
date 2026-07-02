@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import '../../i18n';
 import { GlobalStyle } from '../../styles/global-styles';
 
-// Add all FontAwesome icons to the library
-library.add(fas, fab);
+import '../../utils/fontawesome-icons';
+
 
 interface AstroAppWrapperProps {
   lang: string;

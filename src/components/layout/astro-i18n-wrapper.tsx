@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import '../../i18n';
 
-library.add(fas, fab);
+import '../../utils/fontawesome-icons';
+
 
 interface I18nWrapperProps {
   lang: string;
@@ -66,3 +64,4 @@ const I18nWrapper: React.FC<I18nWrapperProps> = ({ lang, children }) => {
 };
 
 export default I18nWrapper;
+

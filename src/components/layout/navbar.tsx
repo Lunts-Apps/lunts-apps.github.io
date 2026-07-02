@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+
+import '../../utils/fontawesome-icons';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
@@ -657,3 +659,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

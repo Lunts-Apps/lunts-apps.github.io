@@ -1,4 +1,6 @@
 import React from 'react';
+
+import '../utils/fontawesome-icons';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -369,7 +371,7 @@ const Products: React.FC<ProductsProps> = ({ lang }) => {
 
                   <FeatureItem>
                     <div className="icon">
-                      <FontAwesomeIcon icon="shield-alt" />
+                      <FontAwesomeIcon icon="shield-halved" />
                     </div>
                     <div className="text">{t('products.lunts.features.safety.title')}</div>
                   </FeatureItem>
@@ -391,3 +393,4 @@ const Products: React.FC<ProductsProps> = ({ lang }) => {
 };
 
 export default Products;
+
