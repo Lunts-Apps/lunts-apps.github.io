@@ -1,4 +1,4 @@
-import{t as e}from"./react.MgD3mx3I.js";import{o as t,t as n}from"./jsx-runtime.D0D0xG74.js";import{a as r,n as i,o as a,s as o}from"./global-styles.DQ2Tzk09.js";e();var s=n(),c=o.div`
+import{t as e}from"./react.MgD3mx3I.js";import{o as t,t as n}from"./jsx-runtime.D0D0xG74.js";import{a as r,n as i,o as a,s as o}from"./global-styles.DQ2Tzk09.js";import"./fontawesome-icons.DK8JdbCl.js";e();var s=n(),c=o.div`
   min-height: 100vh;
   padding-top: 70px;
   background: ${r.lunts.background};
